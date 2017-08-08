@@ -18,14 +18,14 @@ depends-top-level:
 - "AssignmentPrecedence"
 - "Bool"
 - !private "BooleanLiteralType"
+- !private "MainViewController"
 - "UIApplication"
 - "UIApplicationDelegate"
 - "UIApplicationLaunchOptionsKey"
 - "UIResponder"
 - "UIWindow"
-- !private "ViewController"
 depends-member:
-- !private ["Ps9AnyObject", "ViewController"]
+- !private ["Ps9AnyObject", "MainViewController"]
 - ["Ps9AnyObject", "application"]
 - ["Ps9AnyObject", "applicationDidBecomeActive"]
 - ["Ps9AnyObject", "applicationDidEnterBackground"]
@@ -44,10 +44,10 @@ depends-member:
 - ["Ps9AnyObject", "window"]
 - ["Ps9AnyObject", ""]
 - ["C9MCalendar11AppDelegate", "Bool"]
+- !private ["C9MCalendar11AppDelegate", "MainViewController"]
 - ["C9MCalendar11AppDelegate", "UIApplication"]
 - ["C9MCalendar11AppDelegate", "UIApplicationLaunchOptionsKey"]
 - ["C9MCalendar11AppDelegate", "UIWindow"]
-- !private ["C9MCalendar11AppDelegate", "ViewController"]
 - ["C9MCalendar11AppDelegate", "application"]
 - ["C9MCalendar11AppDelegate", "applicationDidBecomeActive"]
 - ["C9MCalendar11AppDelegate", "applicationDidEnterBackground"]
@@ -65,7 +65,7 @@ depends-member:
 - ["C9MCalendar11AppDelegate", "window"]
 - !private ["PSo15CALayerDelegate", "makeKeyAndVisible"]
 - !private ["PSo15CALayerDelegate", "rootViewController"]
-- !private ["Ps7CVarArg", "ViewController"]
+- !private ["Ps7CVarArg", "MainViewController"]
 - ["Ps7CVarArg", "application"]
 - ["Ps7CVarArg", "applicationDidBecomeActive"]
 - ["Ps7CVarArg", "applicationDidEnterBackground"]
@@ -83,7 +83,7 @@ depends-member:
 - !private ["Ps7CVarArg", "rootViewController"]
 - ["Ps7CVarArg", "window"]
 - ["Ps7CVarArg", ""]
-- !private ["Ps28CustomDebugStringConvertible", "ViewController"]
+- !private ["Ps28CustomDebugStringConvertible", "MainViewController"]
 - ["Ps28CustomDebugStringConvertible", "application"]
 - ["Ps28CustomDebugStringConvertible", "applicationDidBecomeActive"]
 - ["Ps28CustomDebugStringConvertible", "applicationDidEnterBackground"]
@@ -101,7 +101,7 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "rootViewController"]
 - ["Ps28CustomDebugStringConvertible", "window"]
 - ["Ps28CustomDebugStringConvertible", ""]
-- !private ["Ps23CustomStringConvertible", "ViewController"]
+- !private ["Ps23CustomStringConvertible", "MainViewController"]
 - ["Ps23CustomStringConvertible", "application"]
 - ["Ps23CustomStringConvertible", "applicationDidBecomeActive"]
 - ["Ps23CustomStringConvertible", "applicationDidEnterBackground"]
@@ -119,7 +119,7 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "rootViewController"]
 - ["Ps23CustomStringConvertible", "window"]
 - ["Ps23CustomStringConvertible", ""]
-- !private ["Ps9Equatable", "ViewController"]
+- !private ["Ps9Equatable", "MainViewController"]
 - ["Ps9Equatable", "application"]
 - ["Ps9Equatable", "applicationDidBecomeActive"]
 - ["Ps9Equatable", "applicationDidEnterBackground"]
@@ -137,7 +137,7 @@ depends-member:
 - !private ["Ps9Equatable", "rootViewController"]
 - ["Ps9Equatable", "window"]
 - ["Ps9Equatable", ""]
-- !private ["Ps8Hashable", "ViewController"]
+- !private ["Ps8Hashable", "MainViewController"]
 - ["Ps8Hashable", "application"]
 - ["Ps8Hashable", "applicationDidBecomeActive"]
 - ["Ps8Hashable", "applicationDidEnterBackground"]
@@ -155,15 +155,16 @@ depends-member:
 - !private ["Ps8Hashable", "rootViewController"]
 - ["Ps8Hashable", "window"]
 - ["Ps8Hashable", ""]
+- !private ["C9MCalendar18MainViewController", "init"]
 - !private ["PSo8NSCoding", "init"]
 - !private ["PSo8NSCoding", "makeKeyAndVisible"]
 - !private ["PSo8NSCoding", "rootViewController"]
 - !private ["PSo26NSExtensionRequestHandling", "init"]
 - ["CSo8NSObject", "Bool"]
+- !private ["CSo8NSObject", "MainViewController"]
 - ["CSo8NSObject", "UIApplication"]
 - ["CSo8NSObject", "UIApplicationLaunchOptionsKey"]
 - ["CSo8NSObject", "UIWindow"]
-- !private ["CSo8NSObject", "ViewController"]
 - ["CSo8NSObject", "application"]
 - ["CSo8NSObject", "applicationDidBecomeActive"]
 - ["CSo8NSObject", "applicationDidEnterBackground"]
@@ -180,7 +181,7 @@ depends-member:
 - !private ["CSo8NSObject", "makeKeyAndVisible"]
 - !private ["CSo8NSObject", "rootViewController"]
 - ["CSo8NSObject", "window"]
-- !private ["PSo16NSObjectProtocol", "ViewController"]
+- !private ["PSo16NSObjectProtocol", "MainViewController"]
 - ["PSo16NSObjectProtocol", "application"]
 - ["PSo16NSObjectProtocol", "applicationDidBecomeActive"]
 - ["PSo16NSObjectProtocol", "applicationDidEnterBackground"]
@@ -205,7 +206,7 @@ depends-member:
 - !private ["PSo21UIAppearanceContainer", "init"]
 - !private ["PSo21UIAppearanceContainer", "makeKeyAndVisible"]
 - !private ["PSo21UIAppearanceContainer", "rootViewController"]
-- !private ["PSo21UIApplicationDelegate", "ViewController"]
+- !private ["PSo21UIApplicationDelegate", "MainViewController"]
 - ["PSo21UIApplicationDelegate", "application"]
 - ["PSo21UIApplicationDelegate", "applicationDidBecomeActive"]
 - ["PSo21UIApplicationDelegate", "applicationDidEnterBackground"]
@@ -231,10 +232,10 @@ depends-member:
 - !private ["PSo11UIFocusItem", "makeKeyAndVisible"]
 - !private ["PSo11UIFocusItem", "rootViewController"]
 - ["CSo11UIResponder", "Bool"]
+- !private ["CSo11UIResponder", "MainViewController"]
 - ["CSo11UIResponder", "UIApplication"]
 - ["CSo11UIResponder", "UIApplicationLaunchOptionsKey"]
 - ["CSo11UIResponder", "UIWindow"]
-- !private ["CSo11UIResponder", "ViewController"]
 - ["CSo11UIResponder", "application"]
 - ["CSo11UIResponder", "applicationDidBecomeActive"]
 - ["CSo11UIResponder", "applicationDidEnterBackground"]
@@ -252,7 +253,7 @@ depends-member:
 - !private ["CSo11UIResponder", "rootViewController"]
 - ["CSo11UIResponder", "window"]
 - ["CSo11UIResponder", ""]
-- !private ["PSo30UIResponderStandardEditActions", "ViewController"]
+- !private ["PSo30UIResponderStandardEditActions", "MainViewController"]
 - ["PSo30UIResponderStandardEditActions", "application"]
 - ["PSo30UIResponderStandardEditActions", "applicationDidBecomeActive"]
 - ["PSo30UIResponderStandardEditActions", "applicationDidEnterBackground"]
@@ -279,10 +280,9 @@ depends-member:
 - !private ["CSo16UIViewController", "init"]
 - !private ["CSo8UIWindow", "makeKeyAndVisible"]
 - !private ["CSo8UIWindow", "rootViewController"]
-- !private ["C9MCalendar14ViewController", "init"]
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "makeKeyAndVisible"]
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "rootViewController"]
-- !private ["Ps9_Hashable", "ViewController"]
+- !private ["Ps9_Hashable", "MainViewController"]
 - ["Ps9_Hashable", "application"]
 - ["Ps9_Hashable", "applicationDidBecomeActive"]
 - ["Ps9_Hashable", "applicationDidEnterBackground"]
@@ -309,6 +309,7 @@ depends-nominal:
 - "Ps23CustomStringConvertible"
 - "Ps9Equatable"
 - "Ps8Hashable"
+- !private "C9MCalendar18MainViewController"
 - !private "PSo8NSCoding"
 - !private "PSo26NSExtensionRequestHandling"
 - "CSo8NSObject"
@@ -329,7 +330,6 @@ depends-nominal:
 - !private "CSo6UIView"
 - !private "CSo16UIViewController"
 - !private "CSo8UIWindow"
-- !private "C9MCalendar14ViewController"
 - !private "Ps37_DefaultCustomPlaygroundQuickLookable"
 - "Ps9_Hashable"
 depends-dynamic-lookup:
