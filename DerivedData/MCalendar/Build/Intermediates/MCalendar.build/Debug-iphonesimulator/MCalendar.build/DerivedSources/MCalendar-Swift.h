@@ -135,6 +135,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import UIKit;
 @import Foundation;
 @import CoreGraphics;
+@import CoreData;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -151,16 +152,39 @@ SWIFT_CLASS("_TtC9MCalendar11AppDelegate")
 - (void)applicationWillEnterForeground:(UIApplication * _Nonnull)application;
 - (void)applicationDidBecomeActive:(UIApplication * _Nonnull)application;
 - (void)applicationWillTerminate:(UIApplication * _Nonnull)application;
+- (UIInterfaceOrientationMask)application:(UIApplication * _Nonnull)application supportedInterfaceOrientationsForWindow:(UIWindow * _Nullable)window SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 @class NSCoder;
+@class UILabel;
 
 SWIFT_CLASS("_TtC9MCalendar8DateView")
 @interface DateView : UIView
-@property (nonatomic, copy) NSDate * _Nonnull date;
+@property (nonatomic, copy) NSDate * _Nullable date;
+@property (nonatomic, copy) NSString * _Nullable textOnView;
+@property (nonatomic) BOOL isDateHighlighted;
+@property (nonatomic) BOOL isBeginningOfMonth;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (UILabel * _Nonnull)getdateViewWithFrame:(CGRect)frame SWIFT_WARN_UNUSED_RESULT;
+@end
+
+@class NSEntityDescription;
+@class NSManagedObjectContext;
+
+SWIFT_CLASS_NAMED("EventList")
+@interface EventList : NSManagedObject
+- (nonnull instancetype)initWithEntity:(NSEntityDescription * _Nonnull)entity insertIntoManagedObjectContext:(NSManagedObjectContext * _Nullable)context OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class NSDate;
+
+@interface EventList (SWIFT_EXTENSION(MCalendar))
+@property (nonatomic, strong) NSDate * _Nullable date;
+@property (nonatomic, copy) NSString * _Nullable eventDescription;
+@property (nonatomic, copy) NSString * _Nullable eventName;
+@property (nonatomic, copy) NSString * _Nullable time;
 @end
 
 @class UITableViewCell;
@@ -177,27 +201,41 @@ SWIFT_CLASS("_TtC9MCalendar10EventsView")
 @end
 
 @class MonthView;
+@class UIColor;
+@class CAShapeLayer;
 @class NSBundle;
 
 SWIFT_CLASS("_TtC9MCalendar18MainViewController")
 @interface MainViewController : UIViewController
 @property (nonatomic, strong) MonthView * _Nullable monthView;
+@property (nonatomic, strong) UIView * _Nonnull currentMonthView;
+@property (nonatomic, copy) NSString * _Nonnull currentMonth;
 - (void)viewDidLoad;
+- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 - (void)didReceiveMemoryWarning;
 - (void)setUpDataForCalendar;
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)setupMonthHeader;
+- (NSString * _Nonnull)getCurrentMonth SWIFT_WARN_UNUSED_RESULT;
+- (CAShapeLayer * _Nonnull)addBottomLineLayerFromPoint:(CGPoint)fromPoint toPoint:(CGPoint)toPoint lineColor:(UIColor * _Nonnull)lineColor SWIFT_WARN_UNUSED_RESULT;
+- (void)loadAddEventsPage;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
 @end
 
 
 SWIFT_CLASS("_TtC9MCalendar9MonthView")
 @interface MonthView : UITableViewController
+@property (nonatomic, copy) NSArray<NSArray<DateView *> *> * _Nonnull arrayOfWeeks;
+@property (nonatomic, readonly, copy) NSArray<NSString *> * _Nonnull daysOfMonth;
 - (nonnull instancetype)initWithWithframe:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)viewDidLoad;
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+- (UIView * _Nullable)tableView:(UITableView * _Nonnull)tableView viewForHeaderInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 - (NSInteger)numberOfSectionsInTableView:(UITableView * _Nonnull)tableView SWIFT_WARN_UNUSED_RESULT;
 - (CGFloat)tableView:(UITableView * _Nonnull)tableView heightForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+- (CGFloat)tableView:(UITableView * _Nonnull)tableView heightForHeaderInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
 - (void)tableView:(UITableView * _Nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 - (nonnull instancetype)initWithStyle:(UITableViewStyle)style SWIFT_UNAVAILABLE;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;

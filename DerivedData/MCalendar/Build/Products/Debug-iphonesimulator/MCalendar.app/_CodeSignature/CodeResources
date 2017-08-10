@@ -4,6 +4,10 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>Add-icon.png</key>
+		<data>
+		+O68H6TfMG6jsasp8mCJYuji05k=
+		</data>
 		<key>Base.lproj/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
 		yGgI2mZHEFUdxnua2DUqd/K0JnA=
@@ -28,9 +32,21 @@
 		<data>
 		z/Mq6ymD32/Aw8ZN6dzuJ+VKsIM=
 		</data>
+		<key>EventsStorageModel.momd/EventsStorageModel.mom</key>
+		<data>
+		S9VQ/S38rCWkeEp2zAwSdpSmww4=
+		</data>
+		<key>EventsStorageModel.momd/VersionInfo.plist</key>
+		<data>
+		Q/0lU3QJRKyxj7dOeAsFUjDVBT4=
+		</data>
 		<key>Frameworks/libswiftCore.dylib</key>
 		<data>
 		+msuybEsPPMR2cLaC0bH4tCpSWA=
+		</data>
+		<key>Frameworks/libswiftCoreData.dylib</key>
+		<data>
+		0SmOU1Ldz+7J4GRpzHGW5VgV7MA=
 		</data>
 		<key>Frameworks/libswiftCoreGraphics.dylib</key>
 		<data>
@@ -60,6 +76,10 @@
 		<data>
 		TwXz6pt2XOZ1uyCc1Z7GUIjZoTw=
 		</data>
+		<key>Frameworks/libswiftSwiftOnoneSupport.dylib</key>
+		<data>
+		FwVYs8LmJB0KEEa0+KEam0u8u/Q=
+		</data>
 		<key>Frameworks/libswiftUIKit.dylib</key>
 		<data>
 		HHzfAlju0uFBW7MCw4/6q6Wila4=
@@ -79,6 +99,17 @@
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>Add-icon.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			+O68H6TfMG6jsasp8mCJYuji05k=
+			</data>
+			<key>hash2</key>
+			<data>
+			8zKL+lqN4ag+6i3z1YJf7c20iNVE7JMMUwAROg0PwZA=
+			</data>
+		</dict>
 		<key>Base.lproj/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<dict>
 			<key>hash</key>
@@ -145,6 +176,28 @@
 			aMXcG7+8PcGBDGvRAPqVO/ZkK0inuXZgmZ7+Oh6pxPY=
 			</data>
 		</dict>
+		<key>EventsStorageModel.momd/EventsStorageModel.mom</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			S9VQ/S38rCWkeEp2zAwSdpSmww4=
+			</data>
+			<key>hash2</key>
+			<data>
+			e+rTaKr/11iUx1mRfRsAGosTUBUmFIP8VEvN7xDdoXc=
+			</data>
+		</dict>
+		<key>EventsStorageModel.momd/VersionInfo.plist</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Q/0lU3QJRKyxj7dOeAsFUjDVBT4=
+			</data>
+			<key>hash2</key>
+			<data>
+			fLArl1Tmv7jtRzXNF+9sDJCJm+hgDqZbVv2XCsRxoDU=
+			</data>
+		</dict>
 		<key>Frameworks/libswiftCore.dylib</key>
 		<dict>
 			<key>hash</key>
@@ -154,6 +207,17 @@
 			<key>hash2</key>
 			<data>
 			GnHAm/P/UGDFHok950f9SxJanrK/ADS+2l2mfjzrgEE=
+			</data>
+		</dict>
+		<key>Frameworks/libswiftCoreData.dylib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			0SmOU1Ldz+7J4GRpzHGW5VgV7MA=
+			</data>
+			<key>hash2</key>
+			<data>
+			ZBk9gZEnDUijfpvbLa0qyIFQWPU8bU8m6BFn8FnX0kc=
 			</data>
 		</dict>
 		<key>Frameworks/libswiftCoreGraphics.dylib</key>
@@ -231,6 +295,17 @@
 			<key>hash2</key>
 			<data>
 			fenV0oyafo6WELkDIcXi9bWQ3B5oVOojBSvsCXCVk4Q=
+			</data>
+		</dict>
+		<key>Frameworks/libswiftSwiftOnoneSupport.dylib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			FwVYs8LmJB0KEEa0+KEam0u8u/Q=
+			</data>
+			<key>hash2</key>
+			<data>
+			ZfFgvQ5HFcCpYwA35z9SOUUvpRGW7/jLJiilpTfslRM=
 			</data>
 		</dict>
 		<key>Frameworks/libswiftUIKit.dylib</key>
