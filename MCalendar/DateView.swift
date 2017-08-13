@@ -14,12 +14,23 @@ class DateView: UIView {
   var dateInfo:DateInfo = .thismonth
   var isDateHighlighted:Bool = false
   var isBeginningOfMonth:Bool = false
+  var dateLabel:UILabel = UILabel()
+  
+  convenience init(frame: CGRect, date:Date, dateValidity:DateInfo) {
+    self.init(frame: frame)
+    self.backgroundColor = UIColor(white: 1.0, alpha: 0)
+    self.date = date
+    textOnView = String(Calendar.current.component(.day, from: date))
+    dateInfo = dateValidity
+    if dateInfo == .adjacentmonth {
+      textOnView = ""
+    }
+  }
   
   override init(frame: CGRect) {
     super.init(frame: frame)
-    self.frame = frame
-    self.backgroundColor = UIColor(white: 1.0, alpha: 0)
   }
+  
   
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
@@ -32,19 +43,39 @@ class DateView: UIView {
     return false
   }
   public func getdateView(frame:CGRect) -> UILabel {
-    let label = UILabel(frame:frame)
+    dateLabel = UILabel(frame:frame)
     if isToday() {
-      label.backgroundColor = UIColor.blue
+     highlightDate()
     }
     else {
-      label.backgroundColor = UIColor.white
+      unHighlightDate()
     }
-    label.text = textOnView
-    label.textColor = UIColor.gray
-    label.textAlignment = .center
-    label.font = UIFont(name: "Helvatica-Nue", size: 12)
-    return label
+    dateLabel.text = textOnView
+    dateLabel.textColor = UIColor.gray
+    dateLabel.textAlignment = .center
+    dateLabel.font = UIFont(name: "Helvatica-Nue", size: 12)
+    return dateLabel
 
   }
+  override func draw(_ rect: CGRect) {
+    let subview = getdateView(frame:rect)
+    addSubview(subview)
+  }
+  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    // add the highlight logic here
+    super.touchesBegan(touches, with: event)
+    if textOnView != "" {
+      highlightDate()
+      layoutSubviews()
+    }
+  }
   
+  private func highlightDate() {
+    dateLabel.backgroundColor = UIColor.blue
+    isDateHighlighted = true
+  }
+  private func unHighlightDate() {
+    dateLabel.backgroundColor = UIColor.white
+    isDateHighlighted = false
+  }
 }

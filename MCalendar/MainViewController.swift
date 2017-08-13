@@ -12,11 +12,16 @@ class MainViewController: UIViewController {
   
   var monthView: MonthView?
   var currentMonthView:UIView = UIView()
+  var weekview:UIView = UIView()
   var currentMonth:String = "January"
+  var currentYear:Int = 2017
+  let daysOfMonth = ["SU", "M", "T","W","TH","F","SA"]
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     self.view.backgroundColor = UIColor.white
     setupMonthHeader()
+    setupWeekHeader()
     setUpDataForCalendar()
     
   }
@@ -35,7 +40,7 @@ class MainViewController: UIViewController {
   
   //This method will add the calendar view to the mainview.
   func setUpDataForCalendar() {
-    monthView = MonthView.init(withframe:CGRect(x:self.view.frame.origin.x ,y:self.view.frame.origin.y + currentMonthView.frame.height,width:view.frame.size.width,height:view.frame.size.height/3))
+    monthView = MonthView.init(withframe:CGRect(x:0 ,y:self.view.frame.origin.y + currentMonthView.frame.height + weekview.frame.height,width:view.frame.size.width,height:view.frame.size.height/3),currentMonth:8,currentYear:currentYear)
     self.view.addSubview(monthView!.view)
   }
   
@@ -57,6 +62,21 @@ class MainViewController: UIViewController {
     currentMonthView.addSubview(button)
     self.view.addSubview(currentMonthView)
     
+  }
+  
+  func setupWeekHeader() {
+     weekview = UIView(frame: CGRect(x: 0, y: currentMonthView.frame.height, width: self.view.frame.size.width, height:self.view.frame.height * 0.08))
+    weekview.backgroundColor = UIColor.white
+    for i in 0..<7 {
+      let dayOfWeek = UILabel(frame:CGRect(x:i*Int(self.view.frame.size.width/7),y:0,width:(Int(self.view.frame.size.width/7)),height:Int(self.view.frame.height * 0.08)))
+      dayOfWeek.text = daysOfMonth[i]
+      dayOfWeek.textAlignment = .center
+      dayOfWeek.textColor = UIColor.gray
+      dayOfWeek.backgroundColor = UIColor.white
+      weekview.addSubview(dayOfWeek)
+      weekview.bringSubview(toFront: dayOfWeek)
+    }
+     self.view.addSubview(weekview)
   }
   
   //This method will return the current month being displayed in the calendar
