@@ -21,6 +21,7 @@
 		CEA2B4C21F36DB2E0012A76F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEA2B4C11F36DB2E0012A76F /* Assets.xcassets */; };
 		CEA2B4C51F36DB2E0012A76F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEA2B4C31F36DB2E0012A76F /* LaunchScreen.storyboard */; };
 		CEA2B4D01F36DB2F0012A76F /* MCalendarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2B4CF1F36DB2F0012A76F /* MCalendarTests.swift */; };
+		CEE99E501F40C3CF0058F567 /* DateUpdateType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE99E4F1F40C3CF0058F567 /* DateUpdateType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		CEA2B4CB1F36DB2F0012A76F /* MCalendarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MCalendarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA2B4CF1F36DB2F0012A76F /* MCalendarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCalendarTests.swift; sourceTree = "<group>"; };
 		CEA2B4D11F36DB2F0012A76F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEE99E4F1F40C3CF0058F567 /* DateUpdateType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateUpdateType.swift; path = ../DateUpdateType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 				CE6D85F61F401B4700EC1DBC /* DataProviders */,
 				CE6D85F31F401AF200EC1DBC /* UIClasses */,
 				CEA2B4BA1F36DB2E0012A76F /* AppDelegate.swift */,
+				CEE99E4F1F40C3CF0058F567 /* DateUpdateType.swift */,
 				CE33C5DF1F3C527F005D157D /* EventsStorageModel.xcdatamodeld */,
 				CEA2B4BC1F36DB2E0012A76F /* MainViewController.swift */,
 				CEA2B4BE1F36DB2E0012A76F /* Main.storyboard */,
@@ -258,6 +261,7 @@
 			files = (
 				CE33C5E21F3C7BC4005D157D /* EventsStorageModel.xcdatamodeld in Sources */,
 				CE33C5DC1F3798AD005D157D /* DateView.swift in Sources */,
+				CEE99E501F40C3CF0058F567 /* DateUpdateType.swift in Sources */,
 				CE33C5DA1F3778CF005D157D /* EventsList.swift in Sources */,
 				CEA2B4BD1F36DB2E0012A76F /* MainViewController.swift in Sources */,
 				CE33C5D81F371BFE005D157D /* MonthView.swift in Sources */,

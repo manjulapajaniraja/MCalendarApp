@@ -13,6 +13,7 @@ class MonthView: UITableViewController {
   var arrayOfWeeks = [[DateView]]()
   var currentMonth : Int = 1
   var currentYear : Int = 2017
+  var monthupdateDelegate:DateUpdateType?
   
   init(withframe frame: CGRect, currentMonth:Int, currentYear:Int) {
      super.init(nibName: nil, bundle: nil)
@@ -107,6 +108,7 @@ class MonthView: UITableViewController {
     currentYear = components.year!
     initializeDateViewArrayFor(month: currentMonth, year: currentYear)
     tableView.reloadData()
+    monthupdateDelegate?.updatecurrentMonthAndYear(month: currentMonth, year: currentYear)
   }
   
 }

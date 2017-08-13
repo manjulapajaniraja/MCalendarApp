@@ -8,14 +8,14 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, DateUpdateType {
   
   var monthView: MonthView?
   var currentMonthView:UIView = UIView()
   var weekview:UIView = UIView()
   var currentMonth:String = "January"
   var currentYear:Int = 2017
-  let daysOfMonth = ["SU", "M", "T","W","TH","F","SA"]
+  let daysOfMonth = ["SUN", "MON", "TUE","WED","THU","FRI","SAT"]
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -41,6 +41,8 @@ class MainViewController: UIViewController {
   //This method will add the calendar view to the mainview.
   func setUpDataForCalendar() {
     monthView = MonthView.init(withframe:CGRect(x:0 ,y:self.view.frame.origin.y + currentMonthView.frame.height + weekview.frame.height,width:view.frame.size.width,height:view.frame.size.height/3),currentMonth:8,currentYear:currentYear)
+    monthView?.monthupdateDelegate = self
+    monthView?.monthupdateDelegate?.updatecurrentMonthAndYear(month: monthView?.currentMonth ?? 1, year: monthView?.currentYear ?? 2017)
     self.view.addSubview(monthView!.view)
   }
   
@@ -49,7 +51,7 @@ class MainViewController: UIViewController {
     currentMonthView.removeFromSuperview()
     currentMonthView = UIView(frame:CGRect(x:self.view.frame.origin.x ,y:self.view.frame.origin.y ,width:self.view.frame.size.width, height:self.view.frame.size.height * 0.09))
     let monthLabel = UILabel(frame:CGRect(x:currentMonthView.frame.origin.x + (currentMonthView.frame.size.width * 0.02),y:currentMonthView.frame.origin.y + (currentMonthView.frame.size.height * 0.02),width:(currentMonthView.frame.size.width * 0.4), height:currentMonthView.frame.size.height))
-    monthLabel.text = getCurrentMonth()
+    monthLabel.text = getCurrentMonth() + " " + String(currentYear)
     monthLabel.textAlignment = .center
     monthLabel.textColor = UIColor.blue
     let thelayer = UIUtilities.addLineLayer(fromPoint:CGPoint(x:0,y:currentMonthView.frame.height),toPoint:CGPoint(x:currentMonthView.frame.width,y:currentMonthView.frame.height), lineColor:UIColor.gray)
@@ -87,6 +89,13 @@ class MainViewController: UIViewController {
   // This method will perform the action of loading the eventsaddition page when we tap on add icon in the mainview
   func loadAddEventsPage() {
     //Add your code to load the AddEventsPage VC
+  }
+  
+  // Implementing the protocol methods here  
+  func updatecurrentMonthAndYear(month:Int,year:Int) {
+    self.currentYear = year
+    self.currentMonth = DateData.getMonth(month: month)
+    setupMonthHeader()
   }
 
 }
