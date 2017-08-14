@@ -18,6 +18,7 @@ class MonthView: UITableViewController {
   init(withframe frame: CGRect, currentMonth:Int, currentYear:Int) {
      super.init(nibName: nil, bundle: nil)
      tableView = UITableView(frame: frame, style: .plain)
+     tableView.allowsSelection = false
      self.currentMonth = currentMonth
      self.currentYear = currentYear
      initializeDateViewArrayFor(month: currentMonth, year: currentYear)
@@ -38,7 +39,7 @@ class MonthView: UITableViewController {
     for i in 0..<7 {
       if arrayOfWeeks.count > indexPath.row{
         let dateview = arrayOfWeeks[indexPath.row][i]
-          dateview.frame = CGRect(x:i*Int(self.tableView.frame.size.width/7),y:0,width:(Int(self.tableView.frame.size.width/7)),height:44)
+          dateview.frame = CGRect(x:i*Int(self.tableView.frame.size.width/7),y:0,width:(Int(self.tableView.frame.size.width/7)),height:Int(tableView.frame.size.height/5))
         cell.contentView.addSubview(dateview)
       }
     }
@@ -54,10 +55,7 @@ class MonthView: UITableViewController {
     return tableView.frame.size.height/5
   }
   // UITableView Delegate methods
-  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    //Your code here
-    print("i got hit")
-  }
+  
   
   //Objects initialization for displaying dates are done here
   private func initializeDateViewArrayFor(month:Int, year:Int) {

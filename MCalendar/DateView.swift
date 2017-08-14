@@ -15,6 +15,7 @@ class DateView: UIView {
   var isDateHighlighted:Bool = false
   var isBeginningOfMonth:Bool = false
   var dateLabel:UILabel = UILabel()
+   let myNotification = Notification.Name(rawValue:"ImGoingToBeHighlighted")
   
   convenience init(frame: CGRect, date:Date, dateValidity:DateInfo) {
     self.init(frame: frame)
@@ -25,6 +26,8 @@ class DateView: UIView {
     if dateInfo == .adjacentmonth {
       textOnView = ""
     }
+    let nc = NotificationCenter.default
+    nc.addObserver(forName:myNotification, object:nil, queue:nil, using:unHighlightWhenNotificationRecieved)
   }
   
   override init(frame: CGRect) {
@@ -37,7 +40,7 @@ class DateView: UIView {
   }
   private func isToday() -> Bool {
     let currentdate:Date = Date()
-    if currentdate == self.date {
+    if textOnView != "" && Calendar.current.compare(date!, to: currentdate, toGranularity: .day) == .orderedSame {
       return true
     }
     return false
@@ -64,9 +67,12 @@ class DateView: UIView {
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
     // add the highlight logic here
     super.touchesBegan(touches, with: event)
-    if textOnView != "" {
-      highlightDate()
-      layoutSubviews()
+    if !isDateHighlighted {
+      if textOnView != "" {
+        NotificationCenter.default.post(name: myNotification, object: nil)
+        highlightDate()
+        layoutSubviews()
+      }
     }
   }
   
@@ -78,4 +84,10 @@ class DateView: UIView {
     dateLabel.backgroundColor = UIColor.white
     isDateHighlighted = false
   }
+  
+  func unHighlightWhenNotificationRecieved(notification:Notification) {
+    unHighlightDate()
+  }
+  
+  
 }

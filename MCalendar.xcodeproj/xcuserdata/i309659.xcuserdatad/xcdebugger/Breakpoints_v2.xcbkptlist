@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MCalendar/MonthView.swift"
-            timestampString = "524339199.901806"
+            timestampString = "524395065.744536"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MCalendar/MonthView.swift"
-            timestampString = "524339199.901806"
+            timestampString = "524395065.744536"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "scrollViewDidEndDragging(_:willDecelerate:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -41,13 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MCalendar/MainViewController.swift"
-            timestampString = "524339199.901806"
+            filePath = "MCalendar/DateView.swift"
+            timestampString = "524395407.012717"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
-            landmarkName = "updatecurrentMonthAndYear(month:year:)"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "isToday()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
