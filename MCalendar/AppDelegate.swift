@@ -7,12 +7,12 @@
 //
 
 import UIKit
+import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
-
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     self.window?.rootViewController = MainViewController(frame:UIScreen.main.bounds)
@@ -45,6 +45,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
     return UIInterfaceOrientationMask(rawValue: UIInterfaceOrientationMask.portrait.rawValue)
   }
+  lazy var persistentContainer: NSPersistentContainer = {
+    
+    let container = NSPersistentContainer(name: "EventsStorageModel")
+    container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+      if let error = error {
+        
+        fatalError("Unresolved error, \((error as NSError).userInfo)")
+      }
+    })
+    return container
+  }()
 
 }
 

@@ -4,9 +4,10 @@
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="eventDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="eventName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="place" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="EventList" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="EventList" positionX="-63" positionY="-18" width="128" height="118"/>
     </elements>
 </model>
