@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<array>
+		<dict>
+			<key>year</key>
+			<integer>2015</integer>
+			<key>month</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>year</key>
+			<integer>2017</integer>
+			<key>month</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<array>
+		<dict>
+			<key>eventName</key>
+			<string>New Event</string>
+			<key>EventDescription</key>
+			<string>This is the event description</string>
+			<key>eventDate</key>
+			<date>2017-08-16T15:42:45Z</date>
+			<key>place</key>
+			<string>Bangalore</string>
+		</dict>
+	</array>
+</array>
+</plist>

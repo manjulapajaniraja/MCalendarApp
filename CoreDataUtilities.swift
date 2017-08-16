@@ -15,7 +15,7 @@ class CoreDataUtilities {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     return appDelegate.persistentContainer.viewContext
   }  
-  public static func storeEvent (event:EventContents) throws{
+  public static func storeEvent (event:EventContents, storeDataSucess:inout Bool) throws{
     let context = getContext()
     //retrieve the entity that we just created
     let entity =  NSEntityDescription.entity(forEntityName: "EventList", in: context)
@@ -29,7 +29,9 @@ class CoreDataUtilities {
     //save the object
     do {
       try context.save()
+      storeDataSucess = true
     } catch let error as NSError  {
+      storeDataSucess = false
       throw error
     }
   }

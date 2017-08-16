@@ -27,6 +27,8 @@
 		CEE99E6C1F41F6EB0058F567 /* AddNewEventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE99E6B1F41F6EB0058F567 /* AddNewEventController.swift */; };
 		CEE99E6E1F4422970058F567 /* LocationIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = CEE99E6D1F4422970058F567 /* LocationIcon.png */; };
 		CEE99E701F4432C60058F567 /* Add-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEE99E6F1F4432C60058F567 /* Add-icon@2x.png */; };
+		CEE99E741F4488590058F567 /* TestInputs.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEE99E731F4488590058F567 /* TestInputs.plist */; };
+		CEE99E761F4489850058F567 /* TestOutputs.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEE99E751F4489850058F567 /* TestOutputs.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,8 @@
 		CEE99E6B1F41F6EB0058F567 /* AddNewEventController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewEventController.swift; sourceTree = "<group>"; };
 		CEE99E6D1F4422970058F567 /* LocationIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LocationIcon.png; path = MCalendar/Resources/LocationIcon.png; sourceTree = "<group>"; };
 		CEE99E6F1F4432C60058F567 /* Add-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Add-icon@2x.png"; path = "MCalendar/Resources/Add-icon@2x.png"; sourceTree = "<group>"; };
+		CEE99E731F4488590058F567 /* TestInputs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestInputs.plist; sourceTree = "<group>"; };
+		CEE99E751F4489850058F567 /* TestOutputs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestOutputs.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,18 +148,15 @@
 		CEA2B4B91F36DB2E0012A76F /* MCalendar */ = {
 			isa = PBXGroup;
 			children = (
+				CEE99E721F44876F0058F567 /* BaseClasses */,
 				CEE99E641F41C9ED0058F567 /* ProtocolsAndEnums */,
 				CE6D85EF1F3C857400EC1DBC /* UtilityClasses */,
 				CE6D85F61F401B4700EC1DBC /* DataProviders */,
 				CE6D85F31F401AF200EC1DBC /* UIClasses */,
-				CEA2B4BA1F36DB2E0012A76F /* AppDelegate.swift */,
-				CE33C5DF1F3C527F005D157D /* EventsStorageModel.xcdatamodeld */,
-				CEA2B4BC1F36DB2E0012A76F /* MainViewController.swift */,
 				CEA2B4BE1F36DB2E0012A76F /* Main.storyboard */,
 				CEA2B4C11F36DB2E0012A76F /* Assets.xcassets */,
 				CEA2B4C31F36DB2E0012A76F /* LaunchScreen.storyboard */,
 				CEA2B4C61F36DB2E0012A76F /* Info.plist */,
-				CEE99E6B1F41F6EB0058F567 /* AddNewEventController.swift */,
 			);
 			path = MCalendar;
 			sourceTree = "<group>";
@@ -165,6 +166,8 @@
 			children = (
 				CEA2B4CF1F36DB2F0012A76F /* MCalendarTests.swift */,
 				CEA2B4D11F36DB2F0012A76F /* Info.plist */,
+				CEE99E731F4488590058F567 /* TestInputs.plist */,
+				CEE99E751F4489850058F567 /* TestOutputs.plist */,
 			);
 			path = MCalendarTests;
 			sourceTree = "<group>";
@@ -185,6 +188,17 @@
 				CEE99E691F41F6290058F567 /* EventContents.swift */,
 			);
 			name = ProtocolsAndEnums;
+			sourceTree = "<group>";
+		};
+		CEE99E721F44876F0058F567 /* BaseClasses */ = {
+			isa = PBXGroup;
+			children = (
+				CEA2B4BA1F36DB2E0012A76F /* AppDelegate.swift */,
+				CEE99E6B1F41F6EB0058F567 /* AddNewEventController.swift */,
+				CE33C5DF1F3C527F005D157D /* EventsStorageModel.xcdatamodeld */,
+				CEA2B4BC1F36DB2E0012A76F /* MainViewController.swift */,
+			);
+			name = BaseClasses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,6 +297,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEE99E741F4488590058F567 /* TestInputs.plist in Resources */,
+				CEE99E761F4489850058F567 /* TestOutputs.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +493,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = MCalendarTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Manjula.MCalendar.MCalendarTests;
@@ -491,6 +508,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = MCalendarTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Manjula.MCalendar.MCalendarTests;

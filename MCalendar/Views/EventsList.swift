@@ -23,6 +23,7 @@ class EventsView: UITableView, UITableViewDelegate, UITableViewDataSource {
     tableFooterView = UIView()
     allowsSelection = false
     separatorStyle = .none
+    bounces = false
   }
   
   required init?(coder aDecoder: NSCoder) {
@@ -76,9 +77,27 @@ class EventsView: UITableView, UITableViewDelegate, UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-    let headerView = UIView()
-    headerView.backgroundColor = UIColor.init(red: 107, green: 212, blue: 251, alpha: 1)
-    return headerView
+   // let headerView = UIView()
+   // headerView.backgroundColor = UIColor.init(red: 107, green: 212, blue: 251, alpha: 1)
+    let label = UILabel.init(frame: CGRect(x: 0, y: 0, width: self.frame.width, height:self.frame.height * 0.2))
+    label.text = ""
+    if DateData.isToday(date: currentDate) {
+      label.text = "Today " + "* "
+    }
+    let weekday = Calendar.current.component(.weekday, from: currentDate)
+    let formatter = DateFormatter()
+    formatter.dateFormat = "dd/MM/yyyy"
+    label.backgroundColor = UIColor(red: 107/255, green: 202/255, blue: 251/255, alpha: 1)
+    label.text = label.text! + DateData.getDayName(day: weekday) + " * " + formatter.string(from: currentDate)
+    label.textColor = UIColor.darkGray
+    label.textAlignment = .center
+    label.font = UIUtilities.getFontforDevice()
+  //  headerView.addSubview(label)
+    return label
+  }
+  
+  func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    return 44
   }
   
   // UITableView Datasoruce methods

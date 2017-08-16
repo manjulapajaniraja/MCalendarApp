@@ -50,17 +50,21 @@ public class DateData {
   }
   
   public static func getStartDateForMonth(forMonth month:Int, foryear year:Int) -> Date {
-    var dateComponents = DateComponents()
-    dateComponents.year = year
-    dateComponents.month = month
-    dateComponents.day = 1
-    dateComponents.timeZone = TimeZone(abbreviation: "GMT+0:00")
-    dateComponents.hour = 8
-    dateComponents.minute = 34
-    //calculate date using the dateComponents
-    var startDate = Calendar.current.date(from: dateComponents)
-    startDate = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: startDate!)
-    return startDate!
+    if month > 0 && month <= 12 {
+      var dateComponents = DateComponents()
+      dateComponents.year = year
+      dateComponents.month = month
+      dateComponents.day = 1
+      dateComponents.timeZone = TimeZone(abbreviation: "GMT+0:00")
+      dateComponents.hour = 8
+      dateComponents.minute = 34
+      //calculate date using the dateComponents
+      var startDate = Calendar.current.date(from: dateComponents)
+      startDate = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: startDate!)
+      return startDate!
+    }
+    return Date()
+    
   }
   
   public static func getMonth(month:Int) -> String {
@@ -90,5 +94,32 @@ public class DateData {
     default:
       return "December"
     }
+  }
+  
+  public static func getDayName(day:Int) -> String {
+    switch day {
+    case 1:
+      return "Sunday"
+    case 2:
+      return "Monday"
+    case 3:
+      return "Tuesday"
+    case 4:
+      return "Wednesday"
+    case 5:
+      return "Thursday"
+    case 6:
+      return "Friday"
+    default:
+      return "Saturday"
+    }
+  }
+  
+  public static func isToday(date:Date) -> Bool {
+    let currentdate:Date = Date()
+    if Calendar.current.compare(date, to: currentdate, toGranularity: .day) == .orderedSame {
+      return true
+    }
+    return false
   }
 }

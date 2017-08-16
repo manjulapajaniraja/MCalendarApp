@@ -86,18 +86,21 @@ class AddNewEvent: UIViewController {
     self.view.addSubview(eventTimeTextView)
     
   }
-  func addEvent() {
+  func addEvent() -> Bool {
     let timeString = String(describing:(Calendar.current.dateComponents([.hour], from: eventTimeTextView.date)).hour!) + ":" + String(describing: (Calendar.current.dateComponents([.minute], from: eventTimeTextView.date)).minute!)
     let event = EventContents(date: eventDate, eventName: eventNameTextView.text ?? "", eventDescription: eventDescriptionTextView.text ?? "", time:timeString, place: placeTextView.text ?? "")
+    var storedataSucessStatus:Bool = false
     do {
-      try  CoreDataUtilities.storeEvent(event: event)
+      try  CoreDataUtilities.storeEvent(event: event, storeDataSucess: &storedataSucessStatus)
     } catch {
       let alertView = UIAlertController(title: "Error", message: "Error while adding the event", preferredStyle: .actionSheet)
       let alertAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
       alertView.addAction(alertAction)
       self.present(alertView, animated: true, completion: nil)
+      return false
     }
-    dismissViewController()    
+    dismissViewController()
+    return storedataSucessStatus
   }
   
   func dismissViewController() {

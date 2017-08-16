@@ -53,7 +53,7 @@ class MainViewController: UIViewController, DateUpdateType {
     let monthLabel = UILabel(frame:CGRect(x:currentMonthView.frame.origin.x + (currentMonthView.frame.size.width * 0.02),y:currentMonthView.frame.origin.y + (currentMonthView.frame.size.height * 0.02),width:(currentMonthView.frame.size.width * 0.4), height:currentMonthView.frame.size.height))
     monthLabel.text = DateData.getMonth(month: getCurrentMonth()) + " " + String(getCurrentYear())
     monthLabel.textAlignment = .center
-    monthLabel.textColor = UIColor.blue
+    monthLabel.textColor =  UIColor(red: 107/255, green: 202/255, blue: 251/255, alpha: 1)
       //UIColor.init(red: 107, green: 212, blue: 251, alpha: 0)
     monthLabel.font = UIUtilities.getFontforDevice()
     let thelayer = UIUtilities.addLineLayer(fromPoint:CGPoint(x:0,y:currentMonthView.frame.height),toPoint:CGPoint(x:currentMonthView.frame.width,y:currentMonthView.frame.height), lineColor:UIColor.gray)
@@ -117,10 +117,11 @@ class MainViewController: UIViewController, DateUpdateType {
           let event = EventContents(date: each.date! as Date, eventName: each.eventName ?? "", eventDescription: each.eventDescription ?? "", time: each.time  ?? "", place: each.place  ?? "")
           eventsListForCurrentDay.append(event)
         }
-        eventsView = EventsView.init(frame:CGRect(x: 0, y: (monthView?.view.frame.origin.y)! + (monthView?.view.frame.height)! + (self.view.frame.height * 0.02), width: self.view.frame.size.width-(view.frame.width * 0.06), height: self.view.frame.height - ((monthView?.view.frame.height)! + weekview.frame.height + currentMonthView.frame.height)) , style: .plain, events: eventsListForCurrentDay,forDate:currentSelectedDate)
+        eventsView = EventsView.init(frame:CGRect(x: (view.frame.width * 0.06), y: (monthView?.view.frame.origin.y)! + (monthView?.view.frame.height)! + (self.view.frame.height * 0.02), width: self.view.frame.size.width-(view.frame.width * 0.12), height: self.view.frame.height - ((monthView?.view.frame.height)! + weekview.frame.height + currentMonthView.frame.height)) , style: .plain, events: eventsListForCurrentDay,forDate:currentSelectedDate)
         self.view.addSubview(eventsView!)
       }
       catch {
+        // In case of any exception add the alertView and display it to the user
         let alertView = UIAlertController(title: "Error", message: "Error while adding the event", preferredStyle: .actionSheet)
         let alertAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
         alertView.addAction(alertAction)

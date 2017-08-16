@@ -41,8 +41,7 @@ class DateView: UIView {
     fatalError("init(coder:) has not been implemented")
   }
   private func isToday() -> Bool {
-    let currentdate:Date = Date()
-    if textOnView != "" && Calendar.current.compare(date!, to: currentdate, toGranularity: .day) == .orderedSame {
+    if textOnView != "" && DateData.isToday(date: date!) {
       return true
     }
     return false
@@ -80,7 +79,7 @@ class DateView: UIView {
   }
   
   private func highlightDate() {
-    dateLabel.backgroundColor = UIColor.blue
+    dateLabel.backgroundColor =  UIColor(red: 107/255, green: 202/255, blue: 251/255, alpha: 1)
     isDateHighlighted = true
     dateUpdateDelegate?.updatecurrentSelectedDate(date:self.date!)
   }
