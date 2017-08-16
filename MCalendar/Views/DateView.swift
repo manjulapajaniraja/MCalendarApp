@@ -58,7 +58,7 @@ class DateView: UIView {
     dateLabel.text = textOnView
     dateLabel.textColor = UIColor.gray
     dateLabel.textAlignment = .center
-    dateLabel.font = UIFont(name: "Helvatica-Nue", size: 12)
+    dateLabel.font = UIUtilities.getFontforDevice()
     return dateLabel
 
   }

@@ -15,6 +15,7 @@ class MainViewController: UIViewController, DateUpdateType {
   var weekview:UIView = UIView()
   var currentSelectedDate = Date()
   let daysOfMonth = ["SU", "MO", "TU","WE","TH","FR","SA"]
+  var eventsView:EventsView?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -22,7 +23,7 @@ class MainViewController: UIViewController, DateUpdateType {
     setupMonthHeader()
     setupWeekHeader()
     setUpDataForCalendar()
-    
+    setupEventsList(forCurrentDate:currentSelectedDate)
   }
   init(frame:CGRect) {
     super.init(nibName:nil, bundle:Bundle.main)
@@ -53,6 +54,8 @@ class MainViewController: UIViewController, DateUpdateType {
     monthLabel.text = DateData.getMonth(month: getCurrentMonth()) + " " + String(getCurrentYear())
     monthLabel.textAlignment = .center
     monthLabel.textColor = UIColor.blue
+      //UIColor.init(red: 107, green: 212, blue: 251, alpha: 0)
+    monthLabel.font = UIUtilities.getFontforDevice()
     let thelayer = UIUtilities.addLineLayer(fromPoint:CGPoint(x:0,y:currentMonthView.frame.height),toPoint:CGPoint(x:currentMonthView.frame.width,y:currentMonthView.frame.height), lineColor:UIColor.gray)
     self.currentMonthView.layer.addSublayer(thelayer)
     currentMonthView.addSubview(monthLabel)
@@ -64,7 +67,7 @@ class MainViewController: UIViewController, DateUpdateType {
     self.view.addSubview(currentMonthView)
     
   }
-  
+  // This method will set the header for the week
   func setupWeekHeader() {
      weekview = UIView(frame: CGRect(x: 0, y: currentMonthView.frame.height, width: self.view.frame.size.width, height:self.view.frame.height * 0.08))
     weekview.backgroundColor = UIColor.white
@@ -72,6 +75,7 @@ class MainViewController: UIViewController, DateUpdateType {
       let dayOfWeek = UILabel(frame:CGRect(x:i*Int(self.view.frame.size.width/7),y:0,width:(Int(self.view.frame.size.width/7)),height:Int(self.view.frame.height * 0.08)))
       dayOfWeek.text = daysOfMonth[i]
       dayOfWeek.textAlignment = .center
+      dayOfWeek.font = UIUtilities.getFontforDevice()
       dayOfWeek.textColor = UIColor.gray
       dayOfWeek.backgroundColor = UIColor.white
       weekview.addSubview(dayOfWeek)
@@ -99,14 +103,29 @@ class MainViewController: UIViewController, DateUpdateType {
   func updatecurrentSelectedDate(date:Date) {
     currentSelectedDate = date
     setupMonthHeader()
-    showEvents()
+    setupEventsList(forCurrentDate:currentSelectedDate)
   }
   
-  func showEvents() {
-    
+  // This method will add the events view if there are any events on the selected date
+  func setupEventsList(forCurrentDate:Date) {
+      eventsView?.removeFromSuperview()
+      eventsView = nil
+      do {
+        let eventsforSelectedDay = try CoreDataUtilities.getEvents(forDate:currentSelectedDate)
+        var eventsListForCurrentDay = [EventContents]()
+        for each in eventsforSelectedDay {
+          let event = EventContents(date: each.date! as Date, eventName: each.eventName ?? "", eventDescription: each.eventDescription ?? "", time: each.time  ?? "", place: each.place  ?? "")
+          eventsListForCurrentDay.append(event)
+        }
+        eventsView = EventsView.init(frame:CGRect(x: 0, y: (monthView?.view.frame.origin.y)! + (monthView?.view.frame.height)! + (self.view.frame.height * 0.02), width: self.view.frame.size.width-(view.frame.width * 0.06), height: self.view.frame.height - ((monthView?.view.frame.height)! + weekview.frame.height + currentMonthView.frame.height)) , style: .plain, events: eventsListForCurrentDay,forDate:currentSelectedDate)
+        self.view.addSubview(eventsView!)
+      }
+      catch {
+        let alertView = UIAlertController(title: "Error", message: "Error while adding the event", preferredStyle: .actionSheet)
+        let alertAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alertView.addAction(alertAction)
+        self.present(alertView, animated: true, completion: nil)
+      }
   }
-  
-  
-
 }
 

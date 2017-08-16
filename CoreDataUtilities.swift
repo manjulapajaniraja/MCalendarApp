@@ -25,6 +25,7 @@ class CoreDataUtilities {
     transc.setValue(event.eventName, forKey: "EventName")
     transc.setValue(event.eventDescription, forKey: "EventDescription")
     transc.setValue(event.time, forKey:"time")
+    transc.setValue(event.place, forKey: "place")
     //save the object
     do {
       try context.save()
@@ -32,16 +33,16 @@ class CoreDataUtilities {
       throw error
     }
   }
-  public static func getEvents() throws{
+  public static func getEvents(forDate:Date) throws -> [EventList]{
     //create a fetch request, telling it about the entity
+    let startOfDay = Calendar.current.date(bySettingHour: 0, minute: 0, second: 1, of: forDate)
+    let endOfDay = Calendar.current.date(bySettingHour: 23, minute: 59, second: 59, of: forDate)
     let fetchRequest: NSFetchRequest<EventList> = EventList.fetchRequest()
+    fetchRequest.predicate = NSPredicate(format:  "(date >= %@) AND (date <= %@)",startOfDay! as CVarArg,endOfDay! as CVarArg)
     do {
       //go get the results
       let searchResults = try getContext().fetch(fetchRequest)
-      for _ in searchResults as [NSManagedObject] {
-        //get the Key Value pairs (although there may be a better way to do that...
-       
-      }
+      return searchResults
     } catch {
       throw error
     }

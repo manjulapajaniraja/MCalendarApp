@@ -20,4 +20,13 @@ public class UIUtilities {
     theLayer.lineWidth = 0.5
     return theLayer
   }
+  
+  static func getFontforDevice() -> UIFont {
+    if UIDevice.current.name.hasPrefix("iPad") {
+      return UIFont.init(name: "HelveticaNeue", size: 16)!
+    }
+    else {
+      return UIFont.init(name: "HelveticaNeue", size: 14)!
+    }
+  }
 }

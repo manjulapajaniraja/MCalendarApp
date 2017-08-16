@@ -38,6 +38,7 @@ public class DateData {
            if Calendar.current.component(.day, from: date)  == days {
              break
            }
+           date = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: date)!
            date = calendar.date(byAdding: .day, value: 1, to: date)!
            if weekday == 7 {
              break
@@ -53,11 +54,12 @@ public class DateData {
     dateComponents.year = year
     dateComponents.month = month
     dateComponents.day = 1
-    dateComponents.timeZone = TimeZone(abbreviation: "GST")
+    dateComponents.timeZone = TimeZone(abbreviation: "GMT+0:00")
     dateComponents.hour = 8
     dateComponents.minute = 34
     //calculate date using the dateComponents
-    let startDate = Calendar.current.date(from: dateComponents)
+    var startDate = Calendar.current.date(from: dateComponents)
+    startDate = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: startDate!)
     return startDate!
   }
   

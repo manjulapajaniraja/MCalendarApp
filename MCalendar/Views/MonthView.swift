@@ -40,6 +40,7 @@ class MonthView: UITableViewController {
       if arrayOfWeeks.count > indexPath.row{
         let dateview = arrayOfWeeks[indexPath.row][i]
           dateview.frame = CGRect(x:i*Int(self.tableView.frame.size.width/7),y:0,width:(Int(self.tableView.frame.size.width/7)),height:Int(tableView.frame.size.height/5))
+        dateview.dateUpdateDelegate = monthupdateDelegate
         cell.contentView.addSubview(dateview)
       }
     }
@@ -63,11 +64,13 @@ class MonthView: UITableViewController {
     let frame = CGRect(x: 0, y: 0, width: self.tableView.frame.size.width/7, height:self.tableView(tableView, heightForHeaderInSection: 0))
     let formatter = DateFormatter()
     formatter.dateFormat = "dd/MM/yyyy"
+    formatter.timeZone = TimeZone(abbreviation: "GMT+0:00")
     arrayOfWeeks = [[DateView]]()
     for i in 0..<5 {
       var arrayOfDays = [DateView]()
       for j in 0..<7 {
         if datedatas[i][j] != "" {
+          
           let dateView = DateView(frame: frame, date: formatter.date(from: datedatas[i][j])!,dateValidity:.thismonth, dateupdateDelegate:monthupdateDelegate)
           arrayOfDays.append(dateView)
         }

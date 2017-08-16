@@ -52,27 +52,34 @@ class AddNewEvent: UIViewController {
   private func setupFieldsforAddingevent() {
     let eventNameLabel = UILabel(frame: CGRect(x: self.view.frame.width * 0.1 , y: self.navigationBar.frame.origin.y + self.navigationBar.frame.height + (self.navigationBar.frame.height * 0.2) , width: self.view.frame.width * 0.4, height: 44))
     eventNameLabel.text = "EventName"
+    eventNameLabel.font = UIUtilities.getFontforDevice()
     self.view.addSubview(eventNameLabel)
     eventNameTextView = UITextField(frame:CGRect(x: self.view.frame.width * 0.1, y: eventNameLabel.frame.origin.y + eventNameLabel.frame.size.height + (self.navigationBar.frame.height * 0.2), width: self.view.frame.width * 0.6 , height: 44))
     eventNameTextView.placeholder = "Specify the name of the event"
     eventNameTextView.borderStyle = .roundedRect
+    eventNameTextView.font = UIUtilities.getFontforDevice()
     self.view.addSubview(eventNameTextView)
     let eventDescription = UILabel(frame: CGRect(x: self.view.frame.width * 0.1 , y: eventNameTextView.frame.origin.y + eventNameTextView.frame.height + (self.navigationBar.frame.height * 0.2) , width: self.view.frame.width * 0.4, height: 44))
     eventDescription.text = "EventDescription"
+    eventDescription.font = UIUtilities.getFontforDevice()
     self.view.addSubview(eventDescription)
     eventDescriptionTextView = UITextField(frame:CGRect(x: self.view.frame.width * 0.1, y: eventDescription.frame.origin.y + eventDescription.frame.size.height + (self.navigationBar.frame.height * 0.2), width: self.view.frame.width * 0.6 , height: 88))
     eventDescriptionTextView.placeholder = "Provide the description for the event"
     eventDescriptionTextView.borderStyle = .roundedRect
+    eventDescriptionTextView.font = UIUtilities.getFontforDevice()
     self.view.addSubview(eventDescriptionTextView)
     let place = UILabel(frame: CGRect(x: self.view.frame.width * 0.1 , y: eventDescriptionTextView.frame.origin.y + eventDescriptionTextView.frame.height + (self.navigationBar.frame.height * 0.2) , width: self.view.frame.width * 0.4, height: 44))
     place.text = "Event Location"
+    place.font = UIUtilities.getFontforDevice()
     self.view.addSubview(place)
     placeTextView = UITextField(frame:CGRect(x: self.view.frame.width * 0.1, y: place.frame.origin.y + place.frame.size.height + (self.navigationBar.frame.height * 0.2), width: self.view.frame.width * 0.6 , height: 88))
     placeTextView.placeholder = "Provide the location of the event"
     placeTextView.borderStyle = .roundedRect
+    placeTextView.font = UIUtilities.getFontforDevice()
     self.view.addSubview(placeTextView)
     let eventTimeLabel = UILabel(frame: CGRect(x: self.view.frame.width * 0.1 , y: placeTextView.frame.origin.y + placeTextView.frame.height + (self.navigationBar.frame.height * 0.2) , width: self.view.frame.width * 0.4, height: 44))
     eventTimeLabel.text = "Event Time"
+    eventTimeLabel.font = UIUtilities.getFontforDevice()
     self.view.addSubview(eventTimeLabel)
     eventTimeTextView = UIDatePicker(frame:CGRect(x: self.view.frame.width * 0.1 + eventTimeLabel.frame.width, y: placeTextView.frame.origin.y + placeTextView.frame.size.height + (self.navigationBar.frame.height * 0.2), width: self.view.frame.width * 0.37 , height: 44))
     eventTimeTextView.datePickerMode = .time
@@ -80,7 +87,6 @@ class AddNewEvent: UIViewController {
     
   }
   func addEvent() {
-    print("add event")
     let timeString = String(describing:(Calendar.current.dateComponents([.hour], from: eventTimeTextView.date)).hour!) + ":" + String(describing: (Calendar.current.dateComponents([.minute], from: eventTimeTextView.date)).minute!)
     let event = EventContents(date: eventDate, eventName: eventNameTextView.text ?? "", eventDescription: eventDescriptionTextView.text ?? "", time:timeString, place: placeTextView.text ?? "")
     do {
