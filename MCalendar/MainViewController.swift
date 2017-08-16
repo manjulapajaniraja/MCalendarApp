@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreLocation
 
-class MainViewController: UIViewController, DateUpdateType {
+class MainViewController: UIViewController, DateUpdateType,CLLocationManagerDelegate {
   
   var monthView: MonthView?
   var currentMonthView:UIView = UIView()
@@ -16,6 +17,13 @@ class MainViewController: UIViewController, DateUpdateType {
   var currentSelectedDate = Date()
   let daysOfMonth = ["SU", "MO", "TU","WE","TH","FR","SA"]
   var eventsView:EventsView?
+  let locationManager = CLLocationManager()
+  var temperatureView = UILabel()
+  var currentTemp:Double = 109.5 {
+    didSet {
+      setTemperatureView()
+    }
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -24,6 +32,16 @@ class MainViewController: UIViewController, DateUpdateType {
     setupWeekHeader()
     setUpDataForCalendar()
     setupEventsList(forCurrentDate:currentSelectedDate)
+    // Ask for Authorisation from the User.
+    self.locationManager.requestAlwaysAuthorization()
+    self.locationManager.distanceFilter = 20.0
+    // For use in foreground
+    self.locationManager.requestWhenInUseAuthorization()
+    if CLLocationManager.locationServicesEnabled() {
+      locationManager.delegate = self
+      locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+      locationManager.startUpdatingLocation()
+    }
   }
   init(frame:CGRect) {
     super.init(nibName:nil, bundle:Bundle.main)
@@ -50,7 +68,7 @@ class MainViewController: UIViewController, DateUpdateType {
   func setupMonthHeader() {
     currentMonthView.removeFromSuperview()
     currentMonthView = UIView(frame:CGRect(x:self.view.frame.origin.x ,y:self.view.frame.origin.y ,width:self.view.frame.size.width, height:self.view.frame.size.height * 0.09))
-    let monthLabel = UILabel(frame:CGRect(x:currentMonthView.frame.origin.x + (currentMonthView.frame.size.width * 0.02),y:currentMonthView.frame.origin.y + (currentMonthView.frame.size.height * 0.02),width:(currentMonthView.frame.size.width * 0.4), height:currentMonthView.frame.size.height))
+    let monthLabel = UILabel(frame:CGRect(x:currentMonthView.frame.origin.x + (currentMonthView.frame.size.width * 0.02),y:currentMonthView.frame.origin.y + (currentMonthView.frame.size.height * 0.02),width:(currentMonthView.frame.size.width * 0.3), height:currentMonthView.frame.size.height))
     monthLabel.text = DateData.getMonth(month: getCurrentMonth()) + " " + String(getCurrentYear())
     monthLabel.textAlignment = .center
     monthLabel.textColor =  UIColor(red: 107/255, green: 202/255, blue: 251/255, alpha: 1)
@@ -59,6 +77,7 @@ class MainViewController: UIViewController, DateUpdateType {
     let thelayer = UIUtilities.addLineLayer(fromPoint:CGPoint(x:0,y:currentMonthView.frame.height),toPoint:CGPoint(x:currentMonthView.frame.width,y:currentMonthView.frame.height), lineColor:UIColor.gray)
     self.currentMonthView.layer.addSublayer(thelayer)
     currentMonthView.addSubview(monthLabel)
+    
     let button = UIButton(frame:CGRect(x:currentMonthView.frame.size.width - (currentMonthView.frame.size.width * 0.15), y:currentMonthView.frame.origin.y + (currentMonthView.frame.size.height * 0.30) ,width:(currentMonthView.frame.size.width * 0.08),height:currentMonthView.frame.size.height - (currentMonthView.frame.size.height * 0.5)))
     button.addTarget(self, action: #selector(MainViewController.loadAddEventsPage), for: UIControlEvents.touchUpInside)
     let btnImage = UIImage(named: "Add-icon.png")
@@ -104,6 +123,26 @@ class MainViewController: UIViewController, DateUpdateType {
     currentSelectedDate = date
     setupMonthHeader()
     setupEventsList(forCurrentDate:currentSelectedDate)
+    setTemperatureView()
+  }
+  
+  func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])  {
+    let locValue:CLLocationCoordinate2D = manager.location!.coordinate
+    let path = "https://api.openweathermap.org/data/2.5/weather?lat=\(locValue.latitude)&lon=\(locValue.longitude)&appid=03dec74f42b7ccc0941611e51a830e2c"
+    let url = NSURL(string: path)
+    let task = URLSession.shared.dataTask(with: url! as URL) { (data, response, error) in
+      do {
+        if data != nil {
+          let parsedDataInfo = try JSONSerialization.jsonObject(with:data! , options: .allowFragments) as? [String:AnyObject]
+          self.currentTemp = (parsedDataInfo?["main"]?["temp"] as? Double ?? 109.5).rounded()
+        }
+      }
+      catch {
+        return
+      }
+      
+    }
+    task.resume()
   }
   
   // This method will add the events view if there are any events on the selected date
@@ -127,6 +166,16 @@ class MainViewController: UIViewController, DateUpdateType {
         alertView.addAction(alertAction)
         self.present(alertView, animated: true, completion: nil)
       }
+  }
+  
+  func setTemperatureView() {
+    temperatureView.removeFromSuperview()
+    temperatureView = UILabel(frame:CGRect(x:currentMonthView.frame.origin.x + (currentMonthView.frame.size.width * 0.3),y:currentMonthView.frame.origin.y + (currentMonthView.frame.size.height * 0.02),width:(currentMonthView.frame.size.width * 0.4), height:currentMonthView.frame.size.height))
+    temperatureView.text = "Temp : " + String(currentTemp)
+    temperatureView.textAlignment = .center
+    temperatureView.textColor =  UIColor(red: 107/255, green: 202/255, blue: 251/255, alpha: 1)
+    temperatureView.font = UIUtilities.getFontforDevice()
+    self.currentMonthView.addSubview(temperatureView)
   }
 }
 

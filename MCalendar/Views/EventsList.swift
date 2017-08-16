@@ -22,7 +22,6 @@ class EventsView: UITableView, UITableViewDelegate, UITableViewDataSource {
     currentDate = forDate
     tableFooterView = UIView()
     allowsSelection = false
-    separatorStyle = .none
     bounces = false
   }
   
