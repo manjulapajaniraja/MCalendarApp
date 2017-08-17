@@ -3,7 +3,7 @@
 //  MCalendar
 //
 //  Created by Pajaniraja, Manjula on 14/08/17.
-//  Copyright © 2017 sap. All rights reserved.
+//  Copyright © 2017. All rights reserved.
 //
 
 import UIKit
