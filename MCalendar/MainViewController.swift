@@ -19,7 +19,7 @@ class MainViewController: UIViewController, DateUpdateType,CLLocationManagerDele
   var eventsView:EventsView?
   let locationManager = CLLocationManager()
   var temperatureView = UILabel()
-  var currentTemp:Double = 109.5 {
+  var currentTemp:Double = 0.0 {
     didSet {
       setTemperatureView()
     }
@@ -172,13 +172,15 @@ class MainViewController: UIViewController, DateUpdateType,CLLocationManagerDele
   
   // Once the temperature information is recieved, this method will update it in the view.
   func setTemperatureView() {
-    temperatureView.removeFromSuperview()
-    temperatureView = UILabel(frame:CGRect(x:currentMonthView.frame.origin.x + (currentMonthView.frame.size.width * 0.3),y:currentMonthView.frame.origin.y + (currentMonthView.frame.size.height * 0.02),width:(currentMonthView.frame.size.width * 0.4), height:currentMonthView.frame.size.height))
-    temperatureView.text = "Temp : " + String(currentTemp)
-    temperatureView.textAlignment = .center
-    temperatureView.textColor =  UIColor(red: 107/255, green: 202/255, blue: 251/255, alpha: 1)
-    temperatureView.font = UIUtilities.getFontforDevice()
-    self.currentMonthView.addSubview(temperatureView)
+    DispatchQueue.main.async {
+      self.temperatureView.removeFromSuperview()
+      self.temperatureView = UILabel(frame: CGRect(x: self.currentMonthView.frame.origin.x + (self.currentMonthView.frame.size.width * 0.3), y:self.currentMonthView.frame.origin.y + (self.currentMonthView.frame.size.height * 0.02),width:(self.currentMonthView.frame.size.width * 0.4), height:self.currentMonthView.frame.size.height))
+      self.temperatureView.text = "Temp : " + String(self.currentTemp)
+      self.temperatureView.textAlignment = .center
+      self.temperatureView.textColor =  UIColor(red: 107/255, green: 202/255, blue: 251/255, alpha: 1)
+      self.temperatureView.font = UIUtilities.getFontforDevice()
+      self.currentMonthView.addSubview(self.temperatureView)
+    }
   }
 }
 
