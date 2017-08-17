@@ -24,6 +24,7 @@ provides-dynamic-lookup:
 - "setupWeekHeader"
 - "temperatureView"
 - "updatecurrentSelectedDate"
+- "viewDidAppear"
 - "viewDidLoad"
 - "weekview"
 depends-top-level:
@@ -38,6 +39,7 @@ depends-top-level:
 - !private "AnyObject"
 - "Array"
 - "AssignmentPrecedence"
+- "Bool"
 - !private "BooleanLiteralType"
 - !private "Bundle"
 - !private "CGPoint"
@@ -919,6 +921,7 @@ depends-member:
 - !private ["Ps25LosslessStringConvertible", "rounded"]
 - !private ["C9MCalendar18MainViewController", "AddNewEvent"]
 - !private ["C9MCalendar18MainViewController", "AnyObject"]
+- ["C9MCalendar18MainViewController", "Bool"]
 - !private ["C9MCalendar18MainViewController", "Bundle"]
 - !private ["C9MCalendar18MainViewController", "CGPoint"]
 - ["C9MCalendar18MainViewController", "CGRect"]
@@ -978,6 +981,7 @@ depends-member:
 - ["C9MCalendar18MainViewController", "temperatureView"]
 - ["C9MCalendar18MainViewController", "updatecurrentSelectedDate"]
 - !private ["C9MCalendar18MainViewController", "view"]
+- ["C9MCalendar18MainViewController", "viewDidAppear"]
 - ["C9MCalendar18MainViewController", "viewDidLoad"]
 - ["C9MCalendar18MainViewController", "weekview"]
 - ["Ps10MirrorPath", "init"]
@@ -1139,6 +1143,7 @@ depends-member:
 - ["PSo16NSMutableCopying", "init"]
 - !private ["CSo8NSObject", "AddNewEvent"]
 - !private ["CSo8NSObject", "AnyObject"]
+- ["CSo8NSObject", "Bool"]
 - !private ["CSo8NSObject", "Bundle"]
 - !private ["CSo8NSObject", "CGPoint"]
 - ["CSo8NSObject", "CGRect"]
@@ -1232,6 +1237,7 @@ depends-member:
 - !private ["CSo8NSObject", "time"]
 - ["CSo8NSObject", "updatecurrentSelectedDate"]
 - !private ["CSo8NSObject", "view"]
+- ["CSo8NSObject", "viewDidAppear"]
 - ["CSo8NSObject", "viewDidLoad"]
 - ["CSo8NSObject", "weekview"]
 - !private ["CSo8NSObject", "white"]
@@ -1670,6 +1676,7 @@ depends-member:
 - !private ["CSo7UILabel", "textColor"]
 - !private ["CSo11UIResponder", "AddNewEvent"]
 - !private ["CSo11UIResponder", "AnyObject"]
+- ["CSo11UIResponder", "Bool"]
 - !private ["CSo11UIResponder", "Bundle"]
 - !private ["CSo11UIResponder", "CGPoint"]
 - ["CSo11UIResponder", "CGRect"]
@@ -1742,6 +1749,7 @@ depends-member:
 - !private ["CSo11UIResponder", "textColor"]
 - ["CSo11UIResponder", "updatecurrentSelectedDate"]
 - !private ["CSo11UIResponder", "view"]
+- ["CSo11UIResponder", "viewDidAppear"]
 - ["CSo11UIResponder", "viewDidLoad"]
 - ["CSo11UIResponder", "weekview"]
 - !private ["PSo30UIResponderStandardEditActions", "AddNewEvent"]
@@ -1979,6 +1987,7 @@ depends-member:
 - !private ["CSo6UIView", "textColor"]
 - !private ["CSo16UIViewController", "AddNewEvent"]
 - !private ["CSo16UIViewController", "AnyObject"]
+- ["CSo16UIViewController", "Bool"]
 - !private ["CSo16UIViewController", "Bundle"]
 - !private ["CSo16UIViewController", "CGPoint"]
 - ["CSo16UIViewController", "CGRect"]
@@ -2039,6 +2048,7 @@ depends-member:
 - ["CSo16UIViewController", "temperatureView"]
 - ["CSo16UIViewController", "updatecurrentSelectedDate"]
 - !private ["CSo16UIViewController", "view"]
+- ["CSo16UIViewController", "viewDidAppear"]
 - ["CSo16UIViewController", "viewDidLoad"]
 - ["CSo16UIViewController", "weekview"]
 - ["CSo16UIViewController", ""]
@@ -2402,4 +2412,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
-interface-hash: "acf10d43aceff07af30e55de5d893ebe"
+interface-hash: "223bb3b4aa2571c30ea34a399c8ce9f6"

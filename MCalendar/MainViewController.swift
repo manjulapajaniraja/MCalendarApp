@@ -43,6 +43,9 @@ class MainViewController: UIViewController, DateUpdateType,CLLocationManagerDele
       locationManager.startUpdatingLocation()
     }
   }
+  override func viewDidAppear(_ animated: Bool) {
+    setupEventsList(forCurrentDate: currentSelectedDate)
+  }
   init(frame:CGRect) {
     super.init(nibName:nil, bundle:Bundle.main)
     self.view.frame = frame
@@ -72,17 +75,16 @@ class MainViewController: UIViewController, DateUpdateType,CLLocationManagerDele
     monthLabel.text = DateData.getMonth(month: getCurrentMonth()) + " " + String(getCurrentYear())
     monthLabel.textAlignment = .center
     monthLabel.textColor =  UIColor(red: 107/255, green: 202/255, blue: 251/255, alpha: 1)
-      //UIColor.init(red: 107, green: 212, blue: 251, alpha: 0)
     monthLabel.font = UIUtilities.getFontforDevice()
     let thelayer = UIUtilities.addLineLayer(fromPoint:CGPoint(x:0,y:currentMonthView.frame.height),toPoint:CGPoint(x:currentMonthView.frame.width,y:currentMonthView.frame.height), lineColor:UIColor.gray)
     self.currentMonthView.layer.addSublayer(thelayer)
     currentMonthView.addSubview(monthLabel)
     
-    let button = UIButton(frame:CGRect(x:currentMonthView.frame.size.width - (currentMonthView.frame.size.width * 0.15), y:currentMonthView.frame.origin.y + (currentMonthView.frame.size.height * 0.30) ,width:(currentMonthView.frame.size.width * 0.08),height:currentMonthView.frame.size.height - (currentMonthView.frame.size.height * 0.5)))
-    button.addTarget(self, action: #selector(MainViewController.loadAddEventsPage), for: UIControlEvents.touchUpInside)
+    let AddEventbutton = UIButton(frame:CGRect(x:currentMonthView.frame.size.width - (currentMonthView.frame.size.width * 0.15), y:currentMonthView.frame.origin.y + (currentMonthView.frame.size.height * 0.30) ,width:(currentMonthView.frame.size.width * 0.08),height:currentMonthView.frame.size.height - (currentMonthView.frame.size.height * 0.5)))
+    AddEventbutton.addTarget(self, action: #selector(MainViewController.loadAddEventsPage), for: UIControlEvents.touchUpInside)
     let btnImage = UIImage(named: "Add-icon.png")
-    button.setImage(btnImage , for: UIControlState.normal)
-    currentMonthView.addSubview(button)
+    AddEventbutton.setImage(btnImage , for: UIControlState.normal)
+    currentMonthView.addSubview(AddEventbutton)
     self.view.addSubview(currentMonthView)
     
   }
@@ -168,6 +170,7 @@ class MainViewController: UIViewController, DateUpdateType,CLLocationManagerDele
       }
   }
   
+  // Once the temperature information is recieved, this method will update it in the view.
   func setTemperatureView() {
     temperatureView.removeFromSuperview()
     temperatureView = UILabel(frame:CGRect(x:currentMonthView.frame.origin.x + (currentMonthView.frame.size.width * 0.3),y:currentMonthView.frame.origin.y + (currentMonthView.frame.size.height * 0.02),width:(currentMonthView.frame.size.width * 0.4), height:currentMonthView.frame.size.height))

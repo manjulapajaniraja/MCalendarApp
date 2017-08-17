@@ -21,6 +21,7 @@ public class UIUtilities {
     return theLayer
   }
   
+  //Get the fontsize based on device.
   static func getFontforDevice() -> UIFont {
     if UIDevice.current.name.hasPrefix("iPad") {
       return UIFont.init(name: "HelveticaNeue", size: 16)!

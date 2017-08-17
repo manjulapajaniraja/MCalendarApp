@@ -8,9 +8,8 @@
 
 import UIKit
 class AddNewEvent: UIViewController {
-  var newEventObject = EventContents(date: Date(), eventName: "", eventDescription: "", time: "", place: "")
-  var navigationBar = UINavigationBar()
-  var eventDate = Date()
+  private var navigationBar = UINavigationBar()
+  private var eventDate = Date()
   private var eventNameTextView = UITextField()
   private var eventDescriptionTextView = UITextField()
   private var placeTextView = UITextField()
@@ -49,6 +48,8 @@ class AddNewEvent: UIViewController {
   func btn_clicked(_ sender: UIBarButtonItem) {
    dismissViewController()
   }
+  
+  // Adding the views for event addition
   private func setupFieldsforAddingevent() {
     let eventNameLabel = UILabel(frame: CGRect(x: self.view.frame.width * 0.1 , y: self.navigationBar.frame.origin.y + self.navigationBar.frame.height + (self.navigationBar.frame.height * 0.2) , width: self.view.frame.width * 0.4, height: 44))
     eventNameLabel.text = "EventName"
@@ -86,6 +87,8 @@ class AddNewEvent: UIViewController {
     self.view.addSubview(eventTimeTextView)
     
   }
+  
+  // This method gets data typed from keyboard and converts them into EventContents object and stores them in coredata if valid.
   func addEvent() -> Bool {
     let timeString = String(describing:(Calendar.current.dateComponents([.hour], from: eventTimeTextView.date)).hour!) + ":" + String(describing: (Calendar.current.dateComponents([.minute], from: eventTimeTextView.date)).minute!)
     let event = EventContents(date: eventDate, eventName: eventNameTextView.text ?? "", eventDescription: eventDescriptionTextView.text ?? "", time:timeString, place: placeTextView.text ?? "")
@@ -99,6 +102,7 @@ class AddNewEvent: UIViewController {
       self.present(alertView, animated: true, completion: nil)
       return false
     }
+    // Dismiss the viewcontroller once the event is added to database
     dismissViewController()
     return storedataSucessStatus
   }

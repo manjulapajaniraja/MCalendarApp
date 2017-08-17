@@ -133,23 +133,20 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 #if defined(__has_feature) && __has_feature(modules)
 @import UIKit;
-@import Foundation;
 @import CoreGraphics;
+@import Foundation;
 @import CoreData;
 @import CoreLocation;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
 #pragma clang diagnostic ignored "-Wduplicate-method-arg"
-@class UINavigationBar;
 @class NSCoder;
 @class UIBarButtonItem;
 @class NSBundle;
 
 SWIFT_CLASS("_TtC9MCalendar11AddNewEvent")
 @interface AddNewEvent : UIViewController
-@property (nonatomic, strong) UINavigationBar * _Nonnull navigationBar;
-@property (nonatomic, copy) NSDate * _Nonnull eventDate;
 - (nonnull instancetype)initWithFrame:(CGRect)frame eventDate:(NSDate * _Nonnull)eventDate OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 - (void)viewDidLoad;
@@ -185,12 +182,6 @@ SWIFT_CLASS("_TtC9MCalendar11AppDelegate")
 
 SWIFT_CLASS("_TtC9MCalendar8DateView")
 @interface DateView : UIView
-@property (nonatomic, copy) NSDate * _Nullable date;
-@property (nonatomic, copy) NSString * _Nullable textOnView;
-@property (nonatomic) BOOL isDateHighlighted;
-@property (nonatomic) BOOL isBeginningOfMonth;
-@property (nonatomic, strong) UILabel * _Nonnull dateLabel;
-@property (nonatomic, readonly) NSNotificationName _Nonnull myNotification;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 - (UILabel * _Nonnull)getdateViewWithFrame:(CGRect)frame SWIFT_WARN_UNUSED_RESULT;
@@ -221,7 +212,6 @@ SWIFT_CLASS_NAMED("EventList")
 
 SWIFT_CLASS("_TtC9MCalendar10EventsView")
 @interface EventsView : UITableView <UIScrollViewDelegate, UITableViewDataSource, UITableViewDelegate>
-@property (nonatomic, copy) NSDate * _Nonnull currentDate;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 - (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
 - (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
@@ -248,6 +238,7 @@ SWIFT_CLASS("_TtC9MCalendar18MainViewController")
 @property (nonatomic, strong) UILabel * _Nonnull temperatureView;
 @property (nonatomic) double currentTemp;
 - (void)viewDidLoad;
+- (void)viewDidAppear:(BOOL)animated;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 - (void)didReceiveMemoryWarning;
@@ -268,9 +259,6 @@ SWIFT_CLASS("_TtC9MCalendar18MainViewController")
 
 SWIFT_CLASS("_TtC9MCalendar9MonthView")
 @interface MonthView : UITableViewController
-@property (nonatomic, copy) NSArray<NSArray<DateView *> *> * _Nonnull arrayOfWeeks;
-@property (nonatomic) NSInteger currentMonth;
-@property (nonatomic) NSInteger currentYear;
 - (nonnull instancetype)initWithWithframe:(CGRect)frame currentMonth:(NSInteger)currentMonth currentYear:(NSInteger)currentYear OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 - (void)viewDidLoad;

@@ -6,7 +6,6 @@ provides-nominal:
 provides-member:
 - ["C9MCalendar10EventsView", ""]
 provides-dynamic-lookup:
-- "currentDate"
 - "numberOfSections"
 - "tableView"
 depends-top-level:
@@ -547,11 +546,11 @@ depends-member:
 - ["C9MCalendar10EventsView", "UIView"]
 - !private ["C9MCalendar10EventsView", "allowsSelection"]
 - !private ["C9MCalendar10EventsView", "bounces"]
-- ["C9MCalendar10EventsView", "currentDate"]
+- !private ["C9MCalendar10EventsView", "currentDate"]
 - !private ["C9MCalendar10EventsView", "dataSource"]
 - ["C9MCalendar10EventsView", "deinit"]
 - !private ["C9MCalendar10EventsView", "delegate"]
-- ["C9MCalendar10EventsView", "eventsOnCurrentDate"]
+- !private ["C9MCalendar10EventsView", "eventsOnCurrentDate"]
 - !private ["C9MCalendar10EventsView", "fatalError"]
 - !private ["C9MCalendar10EventsView", "frame"]
 - ["C9MCalendar10EventsView", "indexPathForPreferredFocusedView"]
@@ -2222,4 +2221,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
-interface-hash: "1bd82a88375a80bd5386772db2a84b43"
+interface-hash: "9f304a0f2e27641fc1c379581c4cd373"

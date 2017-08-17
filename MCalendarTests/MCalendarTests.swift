@@ -32,6 +32,7 @@ class MCalendarTests: XCTestCase {
     }
     
     func testGetStartMonth() {
+      // this testcase will fail, until we keep updating the output in plist to currentDate. Because, the method getstartdateformonth() returns current date incase of invalid inputs. Should pass if TestOutputs.plist file has currentdate at item[0][0] position.
       for (index,each) in getStartMonthInputs.enumerated() {
         let date = DateData.getStartDateForMonth(forMonth: each["month"]!, foryear: each["year"]!)
         if Calendar.current.compare(date, to: getStartmonthOutputs[index], toGranularity: .day) != .orderedSame {

@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol DateUpdateType {
+protocol DateUpdateType:class {
   func updatecurrentSelectedDate(date:Date)
   
 }

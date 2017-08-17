@@ -9,14 +9,14 @@
 import UIKit
 class DateView: UIView {
   
-  var date:Date?
-  var textOnView:String?
-  var dateInfo:DateInfo = .thismonth
-  var isDateHighlighted:Bool = false
-  var isBeginningOfMonth:Bool = false
-  var dateLabel:UILabel = UILabel()
-  var dateUpdateDelegate:DateUpdateType?
-  let myNotification = Notification.Name(rawValue:"ImGoingToBeHighlighted")
+  private var date:Date?
+  private var textOnView:String?
+  private var dateInfo:DateInfo = .thismonth
+  private var isDateHighlighted:Bool = false
+  private var isBeginningOfMonth:Bool = false
+  private var dateLabel:UILabel = UILabel()
+  weak var dateUpdateDelegate:DateUpdateType?
+  private let myNotification = Notification.Name(rawValue:"ImGoingToBeHighlighted")
   
   convenience init(frame: CGRect, date:Date, dateValidity:DateInfo,dateupdateDelegate:DateUpdateType?) {
     self.init(frame: frame)
@@ -28,6 +28,7 @@ class DateView: UIView {
       textOnView = ""
     }
     self.dateUpdateDelegate = dateupdateDelegate
+    // Adding the notification observer for each dateview
     let nc = NotificationCenter.default
     nc.addObserver(forName:myNotification, object:nil, queue:nil, using:unHighlightWhenNotificationRecieved)
   }
@@ -78,11 +79,13 @@ class DateView: UIView {
     }
   }
   
+  // Highlight the selected date
   private func highlightDate() {
     dateLabel.backgroundColor =  UIColor(red: 107/255, green: 202/255, blue: 251/255, alpha: 1)
     isDateHighlighted = true
     dateUpdateDelegate?.updatecurrentSelectedDate(date:self.date!)
   }
+  // unhighlight the highlighted date
   private func unHighlightDate() {
     dateLabel.backgroundColor = UIColor.white
     isDateHighlighted = false

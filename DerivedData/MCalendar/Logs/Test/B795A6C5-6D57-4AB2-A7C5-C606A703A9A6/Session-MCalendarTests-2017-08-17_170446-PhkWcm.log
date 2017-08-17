@@ -1,0 +1,262 @@
+17:04:46.334 Xcode[84286:10274195] Beginning test session MCalendarTests-F4D3A89D-15F8-4899-B3E3-FDAB128396CC at 2017-08-17 17:04:46.332 with Xcode 8E3004b on target <DVTiPhoneSimulator: 0x7fc795c17b40> {
+		SimDevice: SimDevice : iPhone 6 (343B8741-EF36-46F5-8670-D3339327BBBE) : state={ Booted } deviceType={ SimDeviceType : com.apple.CoreSimulator.SimDeviceType.iPhone-6 } runtime={ SimRuntime : 10.3.1 (14E8301) - com.apple.CoreSimulator.SimRuntime.iOS-10-3 }
+} (10.3.1 (14E8301))
+17:04:46.335 Xcode[84286:10274195] Launching with Xcode.DebuggerFoundation.Launcher.LLDB
+17:04:46.339 Xcode[84286:10585233] Sim iPhone 6: Unregistering for sim device notification with token 17
+17:04:46.340 Xcode[84286:10585233] Calling -[SimDevice getenv:error:] for TESTMANAGERD_SIM_SOCK
+17:04:46.341 Xcode[84286:10585233] Sim iPhone 6 has testmanagerd socket at /private/tmp/com.apple.launchd.BTJY9bublE/com.apple.testmanagerd.unix-domain.socket
+17:04:46.341 Xcode[84286:10585233] Validating test connection socket path (/private/tmp/com.apple.launchd.BTJY9bublE/com.apple.testmanagerd.unix-domain.socket)
+17:04:46.341 Xcode[84286:10585233] Constructing transport for test connection socket
+17:04:46.342 Xcode[84286:10585233] Connected socket 62 to testmanagerd for Sim iPhone 6
+17:04:46.342 Xcode[84286:10585233] Received connection for test runner session
+17:04:46.342 Xcode[84286:10585233] Listening for proxy connection request from the test bundle
+17:04:46.343 Xcode[84286:10585233] Initiating session with identifier: F4D3A89D-15F8-4899-B3E3-FDAB128396CC
+17:04:46.346 Xcode[84286:10274195] Received Ready from iOSSimulator
+17:04:46.347 Xcode[84286:10274195] Sending notification: NSConcreteNotification 0x7fc7a2f826a0 {name = com.apple.iphonesimulator.startSession; userInfo = {
+    deviceUDID = "343B8741-EF36-46F5-8670-D3339327BBBE";
+}}
+17:04:46.358 Xcode[84286:10274195] Test runner session acquired connection.
+17:04:46.360 Xcode[84286:10274195] Waiting for test process to launch.
+17:04:53.959 Xcode[84286:10274195] Launch session started.
+17:04:54.002 Xcode[84286:10274195] Received Ready from iOSSimulator
+17:04:54.002 Xcode[84286:10274195] Sending notification: NSConcreteNotification 0x7fc79cd13020 {name = com.apple.iphonesimulator.startSession; userInfo = {
+    deviceUDID = "343B8741-EF36-46F5-8670-D3339327BBBE";
+}}
+17:04:54.022 Xcode[84286:10274195] Adding console adaptor <IDEConsoleAdaptor: 0x7fc78b30ee60 'target'> for test session F4D3A89D-15F8-4899-B3E3-FDAB128396CC.
+17:04:54.024 Xcode[84286:10587732] 343B8741-EF36-46F5-8670-D3339327BBBE: Registered for sim device notification, got token 18
+17:04:54.024 Xcode[84286:10585233] 343B8741-EF36-46F5-8670-D3339327BBBE: Unregistering for sim device notification with token 18
+17:04:54.024 Xcode[84286:10274195] Received Ready from iOSSimulator
+17:04:54.025 Xcode[84286:10274195] Sending notification: NSConcreteNotification 0x7fc7a28b66f0 {name = com.apple.iphonesimulator.startSession; userInfo = {
+    deviceUDID = "343B8741-EF36-46F5-8670-D3339327BBBE";
+}}
+17:04:54.025 Xcode[84286:10587450] 343B8741-EF36-46F5-8670-D3339327BBBE: Installing app at path: /Users/i309659/MCalendarApp/DerivedData/MCalendar/Build/Products/Debug-iphonesimulator/MCalendar.app and options: {
+    CFBundleIdentifier = "com.Manjula.MCalendar";
+}
+17:04:55.808 Xcode[84286:10587726] Got reply to session initiation request with identifier F4D3A89D-15F8-4899-B3E3-FDAB128396CC (result:error): 22: (null)
+17:04:59.519 Xcode[84286:10587450] 343B8741-EF36-46F5-8670-D3339327BBBE: Installed app at path: /Users/i309659/MCalendarApp/DerivedData/MCalendar/Build/Products/Debug-iphonesimulator/MCalendar.app and options: {
+    CFBundleIdentifier = "com.Manjula.MCalendar";
+}
+17:04:59.520 Xcode[84286:10587450] 343B8741-EF36-46F5-8670-D3339327BBBE: Launching app with identifier: com.Manjula.MCalendar and options: {
+    arguments =     (
+        "-NSTreatUnknownArgumentsAsOpen",
+        NO,
+        "-ApplePersistenceIgnoreState",
+        YES
+    );
+    environment =     {
+        "DYLD_FRAMEWORK_PATH" = "/Users/i309659/MCalendarApp/DerivedData/MCalendar/Build/Products/Debug-iphonesimulator:/Users/i309659/MCalendarApp/DerivedData/MCalendar/Build/Products/Debug-iphonesimulator:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/Developer/Library/PrivateFrameworks";
+        "DYLD_INSERT_LIBRARIES" = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.3.sdk/Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/PrivateFrameworks/IDEBundleInjection.framework/IDEBundleInjection";
+        "DYLD_LIBRARY_PATH" = "/Users/i309659/MCalendarApp/DerivedData/MCalendar/Build/Products/Debug-iphonesimulator:/Users/i309659/MCalendarApp/DerivedData/MCalendar/Build/Products/Debug-iphonesimulator:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/Developer/Library/PrivateFrameworks";
+        NSUnbufferedIO = YES;
+        "OS_ACTIVITY_DT_MODE" = YES;
+        XCInjectBundleInto = "/Users/i309659/MCalendarApp/DerivedData/MCalendar/Build/Products/Debug-iphonesimulator/MCalendar.app/MCalendar";
+        "XCODE_DBG_XPC_EXCLUSIONS" = "com.apple.dt.xctestSymbolicator";
+        XCTestConfigurationFilePath = "/var/folders/tv/4s3n0yf97pxdtnb3wq866flxbcl4fm/T/com.apple.dt.XCTest/F4D3A89D-15F8-4899-B3E3-FDAB128396CC/remote-container/tmp/MCalendarTests-F4D3A89D-15F8-4899-B3E3-FDAB128396CC.xctestconfiguration";
+        "__XCODE_BUILT_PRODUCTS_DIR_PATHS" = "/Users/i309659/MCalendarApp/DerivedData/MCalendar/Build/Products/Debug-iphonesimulator";
+        "__XPC_DYLD_FRAMEWORK_PATH" = "/Users/i309659/MCalendarApp/DerivedData/MCalendar/Build/Products/Debug-iphonesimulator";
+        "__XPC_DYLD_LIBRARY_PATH" = "/Users/i309659/MCalendarApp/DerivedData/MCalendar/Build/Products/Debug-iphonesimulator";
+    };
+    stderr = "/dev/ttys001";
+    stdout = "/dev/ttys001";
+    "wait_for_debugger" = 1;
+}
+17:04:59.556 Xcode[84286:10587739] 343B8741-EF36-46F5-8670-D3339327BBBE: Launched app with identifier: com.Manjula.MCalendar (pid = 96080)
+17:04:59.557 Xcode[84286:10587739] Tracking pid 96080 for simulator <DVTiPhoneSimulator: 0x7fc795c17b40> {
+		SimDevice: SimDevice : iPhone 6 (343B8741-EF36-46F5-8670-D3339327BBBE) : state={ Booted } deviceType={ SimDeviceType : com.apple.CoreSimulator.SimDeviceType.iPhone-6 } runtime={ SimRuntime : 10.3.1 (14E8301) - com.apple.CoreSimulator.SimRuntime.iOS-10-3 }
+}
+17:04:59.557 Xcode[84286:10587739] Checking to see if pid 96080 is valid: kill(pid, 0) = 0 (YES, it's still running)
+17:04:59.557 Xcode[84286:10587739] Setting up DVTTaskNotifyOnProcDeath for pid 96080
+17:04:59.557 Xcode[84286:10274195] Test process runnable PID is 96080.
+17:05:01.343 Xcode[84286:10274195] Waiting for test process to check in..., will wait up to 120s
+17:05:02.368 Xcode[84286:10587517] Handling proxy channel request from test runner
+17:05:02.368 Xcode[84286:10587517] Test runner is ready, running protocol 22, requires at least version 8. Control framework is running 22 and requires at least 8
+17:05:02.368 Xcode[84286:10274195] Test runner session successfully initiated.
+17:05:02.368 Xcode[84286:10274195] Creating the daemon control session.
+17:05:02.368 Xcode[84286:10274195] Whitelisting test process ID 96080
+17:05:02.368 Xcode[84286:10274195] Got authorization request for pid 96080
+17:05:02.370 Xcode[84286:10587517] Requesting authorization for pid 96080
+17:05:02.405 Xcode[84286:10587516] Got reply to authorization request for pid 96080 (result:error): 22: (null)
+17:05:02.405 Xcode[84286:10274195] Got whitelisting response from test daemon. Success: 1
+17:04:55.765 testmanagerd[95926:10587660] Launched testmanagerd from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/usr/libexec/testmanagerd, modified on Thursday, May 11, 2017 at 10:35:42 AM India Standard Time
+17:04:55.767 testmanagerd[95926:10588731] IDE connected over socket 5 (-[XCTestManagerIDEServer listenForControlConnectionsOverNamedSocket]_block_invoke)
+17:04:55.767 testmanagerd[95926:10587660] Setting availability state.
+17:04:55.768 testmanagerd[95926:10588731] Created session with socket 5
+17:04:55.768 testmanagerd[95926:10587660] Posting availability to test bundles...
+17:04:55.806 testmanagerd[95926:10588739] Handled a proxy request from the IDE with session <XCIDESession: 0x7fb32e611680> created Thursday, August 17, 2017 at 5:04:55 PM India Standard Time proxy <_DTXProxy: 0x7fb32f901710>
+17:04:55.807 testmanagerd[95926:10587660] -[XCIDESession _IDE_initiateSessionWithIdentifier:forClient:atPath:protocolVersion:]_block_invoke F4D3A89D-15F8-4899-B3E3-FDAB128396CC 1 5 from client EB6223CB-6245-45B4-AE5F-3B951F73E813-84286-0001C2D664311941 (/Applications/Xcode.app)
+17:04:55.807 testmanagerd[95926:10588739] -[XCTDaemon setIDESession:forIdentifier:]_block_invoke <XCIDESession: 0x7fb32e611680> created Thursday, August 17, 2017 at 5:04:55 PM India Standard Time for client EB6223CB-6245-45B4-AE5F-3B951F73E813-84286-0001C2D664311941 waiting to pair with test session F4D3A89D-15F8-4899-B3E3-FDAB128396CC -> F4D3A89D-15F8-4899-B3E3-FDAB128396CC
+17:05:02.406 testmanagerd[95926:10587660] Received request to collect crash reports in directories '/Users/i309659/Library/Logs/DiagnosticReports', '/Library/Logs/DiagnosticReports' for processes with names 'XCTRunner', 'MCalendar', 'xctest'
+17:04:55.808 testmanagerd[95926:10588739] -[XCTDaemon _queue_handleRequestForSessionWithIdentifier:]
+17:05:00.768 testmanagerd[95926:10588731] Considering exiting:
+17:05:00.769 testmanagerd[95926:10588731] Session summary: 0 test sessions, 1 sessions with identifiers, 0 unidentified sessions, does not have control session
+17:05:00.769 testmanagerd[95926:10588731] Unpaired test sessions: {
+    "F4D3A89D-15F8-4899-B3E3-FDAB128396CC" = "<XCIDESession: 0x7fb32e611680> created Thursday, August 17, 2017 at 5:04:55 PM India Standard Time for client EB6223CB-6245-45B4-AE5F-3B951F73E813-84286-0001C2D664311941 waiting to pair with test session F4D3A89D-15F8-4899-B3E3-FDAB128396CC";
+}
+17:05:02.212 testmanagerd[95926:10588731] Received new test session connection from process with PID 96080
+17:05:02.225 testmanagerd[95926:10587660] Initial orientation 0
+17:05:02.253 testmanagerd[95926:10588918] Test session F4D3A89D-15F8-4899-B3E3-FDAB128396CC requested socket (-[XCTestSession _XCT_requestSocketForSessionIdentifier:reply:])
+17:05:02.254 testmanagerd[95926:10588736] Test session F4D3A89D-15F8-4899-B3E3-FDAB128396CC requested socket (-[XCTDaemon requestSocketForSessionIdentifier:reply:]_block_invoke)
+17:05:02.254 testmanagerd[95926:10588736] -[XCTDaemon _queue_handleRequestForSessionWithIdentifier:]
+17:05:02.254 testmanagerd[95926:10588736] Closing IDE connection before sending socket 7 to test host.
+17:05:02.255 testmanagerd[95926:10588736] -[XCIDESession closeIDEConnection:] sending barrier
+17:05:02.408 testmanagerd[95926:10587660] Initializing crash report observer for /Users/i309659/Library/Logs/DiagnosticReports
+17:05:02.255 testmanagerd[95926:10587660] barrier flushed, closing DTXConnection to IDE, socket will not be closed
+17:05:02.255 testmanagerd[95926:10588918] DTXSocketTransport disconnected, owner is <XCIDESession: 0x7fb32e611680> created Thursday, August 17, 2017 at 5:04:55 PM India Standard Time for client EB6223CB-6245-45B4-AE5F-3B951F73E813-84286-0001C2D664311941 waiting to pair with test session F4D3A89D-15F8-4899-B3E3-FDAB128396CC
+17:05:02.256 testmanagerd[95926:10588918] -[XCTDaemon closeIDESession:]_block_invoke <XCIDESession: 0x7fb32e611680> created Thursday, August 17, 2017 at 5:04:55 PM India Standard Time for client EB6223CB-6245-45B4-AE5F-3B951F73E813-84286-0001C2D664311941 waiting to pair with test session F4D3A89D-15F8-4899-B3E3-FDAB128396CC
+17:05:02.409 testmanagerd[95926:10587660] Getting files in /Users/i309659/Library/Logs/DiagnosticReports
+17:05:02.257 testmanagerd[95926:10588918] Considering exiting:
+17:05:02.257 testmanagerd[95926:10588918] Session summary: 1 test sessions, 0 sessions with identifiers, 0 unidentified sessions, does not have control session
+17:05:02.257 testmanagerd[95926:10588920] app info {
+    BKSApplicationStateAppIsFrontmost = 1;
+    BKSApplicationStateExtensionKey = 0;
+    SBApplicationStateDisplayIDKey = "com.Manjula.MCalendar";
+    SBApplicationStateKey = 8;
+    SBApplicationStateProcessIDKey = 96080;
+    SBMostElevatedStateForProcessID = 8;
+}
+17:05:02.261 testmanagerd[95926:10588920] Got request for process assertion for pid 96080.
+17:05:02.262 testmanagerd[95926:10588920] Created process assertion for pid 96080: <BKSProcessAssertion: 0x7fb32e501680>, waiting for response from assertiond.
+17:05:02.263 testmanagerd[95926:10588920] Starting to monitor com.Manjula.MCalendar
+17:05:02.264 testmanagerd[95926:10588918] Got reply for process assertion request, success: YES
+17:05:02.265 testmanagerd[95926:10588920] Got application state update: com.Manjula.MCalendar (96080) -> 8
+17:05:02.364 testmanagerd[95926:10587660] Sending socket 7 to test host
+17:05:02.365 testmanagerd[95926:10588920] -[XCTDaemon closeIDESession:]_block_invoke <XCIDESession: 0x7fb32e611680> created Thursday, August 17, 2017 at 5:04:55 PM India Standard Time for client EB6223CB-6245-45B4-AE5F-3B951F73E813-84286-0001C2D664311941 waiting to pair with test session F4D3A89D-15F8-4899-B3E3-FDAB128396CC
+17:05:02.365 testmanagerd[95926:10588920] Considering exiting:
+17:05:02.365 testmanagerd[95926:10588920] Session summary: 1 test sessions, 0 sessions with identifiers, 0 unidentified sessions, does not have control session
+17:05:02.402 testmanagerd[95926:10588920] IDE connected over socket 6 (-[XCTestManagerIDEServer listenForControlConnectionsOverNamedSocket]_block_invoke)
+17:05:02.403 testmanagerd[95926:10588920] Created session with socket 6
+17:05:02.404 testmanagerd[95926:10588731] Handled a proxy request from the IDE with session <XCIDESession: 0x7fb32e611680> created Thursday, August 17, 2017 at 5:05:02 PM India Standard Time proxy <_DTXProxy: 0x7fb32e6167e0>
+17:05:02.404 testmanagerd[95926:10588731] -[XCIDESession _IDE_initiateControlSessionForTestProcessID:protocolVersion:] 96080 22
+17:05:02.405 testmanagerd[95926:10587660] Set control session <XCIDESession: 0x7fb32e611680> created Thursday, August 17, 2017 at 5:05:02 PM India Standard Time with proto 22 and proxy <_DTXProxy: 0x7fb32e6167e0>
+17:05:02.412 testmanagerd[95926:10587660] Found 17 files in /Users/i309659/Library/Logs/DiagnosticReports
+17:05:02.412 testmanagerd[95926:10587660] Started monitoring /Users/i309659/Library/Logs/DiagnosticReports
+17:05:02.413 testmanagerd[95926:10587660] Initializing crash report observer for /Library/Logs/DiagnosticReports
+17:05:02.414 testmanagerd[95926:10587660] Getting files in /Library/Logs/DiagnosticReports
+17:05:02.459 testmanagerd[95926:10587660] Found 84 files in /Library/Logs/DiagnosticReports
+17:05:02.459 testmanagerd[95926:10587660] Started monitoring /Library/Logs/DiagnosticReports
+17:05:02.183 MCalendar[96080:10588782] Linked XCTest.framework from /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCTest.framework/XCTest, built with Xcode 0833(8E3002), modified on Thursday, May 11, 2017 at 10:40:51 AM India Standard Time
+17:05:02.183 MCalendar[96080:10588782] XCTest.framework bundle version: 12124
+17:05:02.201 MCalendar[96080:10588782] System uptime: 5d 17:41:56
+17:05:02.201 MCalendar[96080:10588782] Process arguments: (
+    "/Users/i309659/Library/Developer/CoreSimulator/Devices/343B8741-EF36-46F5-8670-D3339327BBBE/data/Containers/Bundle/Application/C617837A-2782-4E70-AF2E-78FBA259C664/MCalendar.app/MCalendar",
+    "-NSTreatUnknownArgumentsAsOpen",
+    NO,
+    "-ApplePersistenceIgnoreState",
+    YES
+)
+17:05:02.201 MCalendar[96080:10588782] Process environment: {
+    "CFFIXED_USER_HOME" = "/Users/i309659/Library/Developer/CoreSimulator/Devices/343B8741-EF36-46F5-8670-D3339327BBBE/data/Containers/Data/Application/70DBF574-9A8F-4236-B847-0568A47D8DAE";
+    CLASSIC = 0;
+    "CUPS_SERVER" = "/private/tmp/com.apple.launchd.T1L0LMxiNt/Listeners";
+    "DYLD_FALLBACK_FRAMEWORK_PATH" = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/Frameworks";
+    "DYLD_FALLBACK_LIBRARY_PATH" = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/usr/lib";
+    "DYLD_FRAMEWORK_PATH" = "/Users/i309659/MCalendarApp/DerivedData/MCalendar/Build/Products/Debug-iphonesimulator:/Users/i309659/MCalendarApp/DerivedData/MCalendar/Build/Products/Debug-iphonesimulator:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/Developer/Library/PrivateFrameworks";
+    "DYLD_INSERT_LIBRARIES" = "";
+    "DYLD_LIBRARY_PATH" = "/Users/i309659/MCalendarApp/DerivedData/MCalendar/Build/Products/Debug-iphonesimulator:/Users/i309659/MCalendarApp/DerivedData/MCalendar/Build/Products/Debug-iphonesimulator:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/Developer/Library/PrivateFrameworks";
+    "DYLD_ROOT_PATH" = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk";
+    "DYLD_SHARED_REGION" = avoid;
+    HOME = "/Users/i309659/Library/Developer/CoreSimulator/Devices/343B8741-EF36-46F5-8670-D3339327BBBE/data/Containers/Data/Application/70DBF574-9A8F-4236-B847-0568A47D8DAE";
+    "IOS_SIMULATOR_SYSLOG_SOCKET" = "/private/tmp/com.apple.CoreSimulator.SimDevice.343B8741-EF36-46F5-8670-D3339327BBBE.launchd_sim/syslogsock";
+    "IPHONE_SHARED_RESOURCES_DIRECTORY" = "/Users/i309659/Library/Developer/CoreSimulator/Devices/343B8741-EF36-46F5-8670-D3339327BBBE/data";
+    "IPHONE_SIMULATOR_CLASS" = N61;
+    "IPHONE_SIMULATOR_ROOT" = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk";
+    "IPHONE_TVOUT_EXTENDED_PROPERTIES" = "/Users/i309659/Library/Developer/CoreSimulator/Devices/343B8741-EF36-46F5-8670-D3339327BBBE/data/Library/Application Support/Simulator/extended_display.plist";
+    NSUnbufferedIO = YES;
+    "OS_ACTIVITY_DT_MODE" = YES;
+    PATH = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/usr/sbin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/sbin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/usr/local/bin";
+    "SIMULATOR_CAPABILITIES" = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/CoreSimulator/Profiles/DeviceTypes/iPhone 6.simdevicetype/Contents/Resources/capabilities.plist";
+    "SIMULATOR_DEVICE_NAME" = "iPhone 6";
+    "SIMULATOR_EXTENDED_DISPLAY_PROPERTIES" = "/Users/i309659/Library/Developer/CoreSimulator/Devices/343B8741-EF36-46F5-8670-D3339327BBBE/data/Library/Application Support/Simulator/extended_display.plist";
+    "SIMULATOR_HID_SYSTEM_MANAGER" = "/Applications/Xcode.app/Contents/Developer/Applications/Simulator.app/Contents/Resources/Platforms/iphoneos/SimulatorHID.framework";
+    "SIMULATOR_HOST_HOME" = "/Users/i309659";
+    "SIMULATOR_LEGACY_ASSET_SUFFIX" = iphone;
+    "SIMULATOR_LOG_ROOT" = "/Users/i309659/Library/Logs/CoreSimulator/343B8741-EF36-46F5-8670-D3339327BBBE";
+    "SIMULATOR_MAINSCREEN_HEIGHT" = 1334;
+    "SIMULATOR_MAINSCREEN_PITCH" = "326.000000";
+    "SIMULATOR_MAINSCREEN_SCALE" = "2.000000";
+    "SIMULATOR_MAINSCREEN_WIDTH" = 750;
+    "SIMULATOR_MEMORY_WARNINGS" = "/Users/i309659/Library/Developer/CoreSimulator/Devices/343B8741-EF36-46F5-8670-D3339327BBBE/data/var/run/memory_warning_simulation";
+    "SIMULATOR_MODEL_IDENTIFIER" = "iPhone7,2";
+    "SIMULATOR_PLATFORM_RUNTIME_OVERLAY_ROOT" = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/CoreSimulator/RuntimeOverlay";
+    "SIMULATOR_PRODUCT_CLASS" = N61;
+    "SIMULATOR_ROOT" = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk";
+    "SIMULATOR_RUNTIME_BUILD_VERSION" = 14E8301;
+    "SIMULATOR_RUNTIME_VERSION" = "10.3.1";
+    "SIMULATOR_SHARED_RESOURCES_DIRECTORY" = "/Users/i309659/Library/Developer/CoreSimulator/Devices/343B8741-EF36-46F5-8670-D3339327BBBE/data";
+    "SIMULATOR_UDID" = "343B8741-EF36-46F5-8670-D3339327BBBE";
+    "SIMULATOR_VERSION_INFO" = "CoreSimulator 375.21 - Device: iPhone 6 - Runtime: iOS 10.3 (14E8301) - DeviceType: iPhone 6";
+    "TESTMANAGERD_SIM_SOCK" = "/private/tmp/com.apple.launchd.BTJY9bublE/com.apple.testmanagerd.unix-domain.socket";
+    TMPDIR = "/Users/i309659/Library/Developer/CoreSimulator/Devices/343B8741-EF36-46F5-8670-D3339327BBBE/data/Containers/Data/Application/70DBF574-9A8F-4236-B847-0568A47D8DAE/tmp";
+    XCInjectBundleInto = "/Users/i309659/MCalendarApp/DerivedData/MCalendar/Build/Products/Debug-iphonesimulator/MCalendar.app/MCalendar";
+    "XCODE_DBG_XPC_EXCLUSIONS" = "com.apple.dt.xctestSymbolicator";
+    XCTestConfigurationFilePath = "/var/folders/tv/4s3n0yf97pxdtnb3wq866flxbcl4fm/T/com.apple.dt.XCTest/F4D3A89D-15F8-4899-B3E3-FDAB128396CC/remote-container/tmp/MCalendarTests-F4D3A89D-15F8-4899-B3E3-FDAB128396CC.xctestconfiguration";
+    "XPC_FLAGS" = 0x0;
+    "XPC_SERVICE_NAME" = "UIKitApplication:com.Manjula.MCalendar[0xa453][89328]";
+    "XPC_SIMULATOR_LAUNCHD_NAME" = "com.apple.CoreSimulator.SimDevice.343B8741-EF36-46F5-8670-D3339327BBBE.launchd_sim";
+    "__XCODE_BUILT_PRODUCTS_DIR_PATHS" = "/Users/i309659/MCalendarApp/DerivedData/MCalendar/Build/Products/Debug-iphonesimulator";
+    "__XPC_DYLD_FRAMEWORK_PATH" = "/Users/i309659/MCalendarApp/DerivedData/MCalendar/Build/Products/Debug-iphonesimulator";
+    "__XPC_DYLD_LIBRARY_PATH" = "/Users/i309659/MCalendarApp/DerivedData/MCalendar/Build/Products/Debug-iphonesimulator";
+}
+17:05:02.205 MCalendar[96080:10588782] <XCTWaiter: 0x60000000a4c0> entering wait loop for 5.00s
+17:05:02.228 MCalendar[96080:10588892] Got daemon protocol version 12
+17:05:02.228 MCalendar[96080:10588900] <XCTWaiter: 0x60000000a4c0>: cancelWaiting
+17:05:02.253 MCalendar[96080:10588782] <XCTWaiter: 0x60000000a4c0> done waiting
+17:05:02.253 MCalendar[96080:10588782] <XCTWaiter: 0x60000000a4c0> cleaning up Exchange protocol versions with daemon
+17:05:02.253 MCalendar[96080:10588782] Requesting socket
+17:05:02.253 MCalendar[96080:10588782] <XCTWaiter: 0x60000000a550> entering wait loop for 30.00s
+17:05:02.365 MCalendar[96080:10588892] <XCTWaiter: 0x60000000a550>: cancelWaiting
+17:05:02.365 MCalendar[96080:10588782] <XCTWaiter: 0x60000000a550> done waiting
+17:05:02.365 MCalendar[96080:10588782] <XCTWaiter: 0x60000000a550> cleaning up Socket for IDE session acquired
+17:05:02.365 MCalendar[96080:10588782] Creating transport with socket 10
+17:05:02.365 MCalendar[96080:10588782] Creating connection with transport <DTXSocketTransport: 0x61800011c290>
+17:05:02.367 MCalendar[96080:10588782] Creating the proxy channel with connection <DTXConnection 0x6180001f0e00 : x1>
+17:05:02.368 MCalendar[96080:10588782] Messaging IDE proxy - _XCT_testBundleReadyWithProtocolVersion:22 minimumVersion:8
+17:05:02.368 MCalendar[96080:10588782] <XCTWaiter: 0x608000012fd0> entering wait loop for 30.00s
+17:05:02.368 MCalendar[96080:10588904] _XCT_testBundleReadyWithProtocolVersion:minimumVersion: reply received
+17:05:02.461 MCalendar[96080:10588904] _IDE_startExecutingTestPlanWithProtocolVersion:22
+17:05:02.461 MCalendar[96080:10588900] <XCTWaiter: 0x608000012fd0>: cancelWaiting
+17:05:02.461 MCalendar[96080:10588782] <XCTWaiter: 0x608000012fd0> done waiting
+17:05:02.461 MCalendar[96080:10588782] <XCTWaiter: 0x608000012fd0> cleaning up IDE session ready for test plan
+17:05:02.465 Xcode[84286:10274195] Starting test plan, clearing initialization timeout timer.
+17:05:02.465 MCalendar[96080:10588782] Loading test suite...
+17:05:02.467 MCalendar[96080:10588782] Finished loading test suite, took 0.002s
+17:05:02.467 MCalendar[96080:10588782] -[XCTRunnerIDESession testBundleWillStart:]
+17:05:02.467 MCalendar[96080:10588782] Running suite...
+17:05:02.467 MCalendar[96080:10588782] -[XCTRunnerIDESession testSuiteWillStart:]
+17:05:02.468 Xcode[84286:10274195] _XCT_testSuite:Selected tests didStartAt:2017-08-17 11:35:02 +0000
+17:05:02.475 Xcode[84286:10587732] (LOG ARBITER) Rotating message buffer with 11 messages.
+17:05:02.475 Xcode[84286:10587732] (LOG ARBITER) Dumping buffered message data; 11 messages.
+17:05:02.475 Xcode[84286:10274195] _XCT_testCaseDidFinishForTestClass:MCalendarTests.MCalendarTests method:testgetEvents withStatus:passed duration:0.005554020404815674
+17:05:02.475 Xcode[84286:10274195] _XCT_testCaseDidStartForTestClass:MCalendarTests.MCalendarTests method:testGetStartMonth
+17:05:02.474 MCalendar[96080:10588782] -[XCTRunnerIDESession testCaseWillStart:] MCalendarTests.MCalendarTests testGetStartMonth
+Test Case '-[MCalendarTests.MCalendarTests testgetEvents]' passed (0.006 seconds).
+Test Case '-[MCalendarTests.MCalendarTests testGetStartMonth]' started.
+/Users/i309659/MCalendarApp/MCalendarTests/MCalendarTests.swift:38: error: -[MCalendarTests.MCalendarTests testGetStartMonth] : XCTAssertTrue failed - GetStartDate() did not give proper date
+Test Case '-[MCalendarTests.MCalendarTests testGetStartMonth]' failed (0.005 seconds).
+Test Case '-[MCalendarTests.MCalendarTests testStoreEvent]' started.
+Test Case '-[MCalendarTests.MCalendarTests testStoreEvent]' passed (0.002 seconds).
+Test Suite 'MCalendarTests' failed at 2017-08-17 17:05:02.481.
+	 Executed 3 tests, with 1 failure (0 unexpected) in 0.012 (0.013) seconds
+Test Suite 'MCalendarTests.xctest' failed at 2017-08-17 17:05:02.481.
+	 Executed 3 tests, with 1 failure (0 unexpected) in 0.012 (0.014) seconds
+17:05:02.478 MCalendar[96080:10588782] -[XCTRunnerIDESession testCase:didFailWithDescription:inFile:atLine:]
+17:05:02.518 Xcode[84286:10274195] _XCT_testCaseDidFailForTestClass:MCalendarTests.MCalendarTests method:testGetStartMonth withMessage:XCTAssertTrue failed - GetStartDate() did not give proper date file:/Users/i309659/MCalendarApp/MCalendarTests/MCalendarTests.swift line:38
+17:05:02.479 MCalendar[96080:10588782] -[XCTRunnerIDESession testCaseDidFinish:]
+17:05:02.518 Xcode[84286:10274195] _XCT_testCaseDidFinishForTestClass:MCalendarTests.MCalendarTests method:testGetStartMonth withStatus:failed duration:0.005160033702850342
+17:05:02.519 Xcode[84286:10588930] (LOG ARBITER) Dumping buffered message data; 0 messages.
+17:05:02.479 MCalendar[96080:10588782] -[XCTRunnerIDESession testCaseWillStart:] MCalendarTests.MCalendarTests testStoreEvent
+17:05:02.519 Xcode[84286:10274195] _XCT_testCaseDidStartForTestClass:MCalendarTests.MCalendarTests method:testStoreEvent
+17:05:02.481 MCalendar[96080:10588782] -[XCTRunnerIDESession testCaseDidFinish:]
+17:05:02.519 Xcode[84286:10274195] _XCT_testCaseDidFinishForTestClass:MCalendarTests.MCalendarTests method:testStoreEvent withStatus:passed duration:0.00162196159362793
+17:05:02.481 MCalendar[96080:10588782] -[XCTRunnerIDESession testSuiteDidFinish:]
+17:05:02.519 Xcode[84286:10274195] _XCT_testSuite:MCalendarTests didFinishAt:2017-08-17 11:35:02 +0000 runCount:3 withFailures:1 unexpected:0 testDuration:0.01233601570129395 totalDuration:0.01335996389389038
+17:05:02.482 MCalendar[96080:10588782] -[XCTRunnerIDESession testSuiteDidFinish:]
+17:05:02.519 Xcode[84286:10274195] _XCT_testSuite:MCalendarTests.xctest didFinishAt:2017-08-17 11:35:02 +0000 runCount:3 withFailures:1 unexpected:0 testDuration:0.01233601570129395 totalDuration:0.01405102014541626
+17:05:02.482 MCalendar[96080:10588782] -[XCTRunnerIDESession testSuiteDidFinish:]
+17:05:02.519 Xcode[84286:10274195] _XCT_testSuite:Selected tests didFinishAt:2017-08-17 11:35:02 +0000 runCount:3 withFailures:1 unexpected:0 testDuration:0.01233601570129395 totalDuration:0.01518899202346802
+17:05:02.482 MCalendar[96080:10588782] Finished running suite.
+17:05:02.519 Xcode[84286:10274195] -[XCTTestRunnerSession _XCT_didFinishExecutingTestPlan]_block_invoke
+17:05:02.482 MCalendar[96080:10588782] -[XCTRunnerIDESession testBundleDidFinish:], Flushing connection to IDE...
+17:05:02.482 MCalendar[96080:10588782] Calling completion.
+17:05:02.482 MCalendar[96080:10588782] <XCTWaiter: 0x608000013530> entering wait loop for 15.00s
+17:05:03.060 Xcode[84286:10274195] _finishWithError:(null) didCancel: 0

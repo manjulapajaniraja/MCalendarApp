@@ -6,14 +6,8 @@ provides-nominal:
 provides-member:
 - ["C9MCalendar8DateView", ""]
 provides-dynamic-lookup:
-- "date"
-- "dateLabel"
 - "draw"
 - "getdateView"
-- "isBeginningOfMonth"
-- "isDateHighlighted"
-- "myNotification"
-- "textOnView"
 - "touchesBegan"
 - "unHighlightWhenNotificationRecieved"
 depends-top-level:
@@ -267,9 +261,9 @@ depends-member:
 - !private ["C9MCalendar8DateView", "UIUtilities"]
 - !private ["C9MCalendar8DateView", "addSubview"]
 - !private ["C9MCalendar8DateView", "backgroundColor"]
-- ["C9MCalendar8DateView", "date"]
-- ["C9MCalendar8DateView", "dateInfo"]
-- ["C9MCalendar8DateView", "dateLabel"]
+- !private ["C9MCalendar8DateView", "date"]
+- !private ["C9MCalendar8DateView", "dateInfo"]
+- !private ["C9MCalendar8DateView", "dateLabel"]
 - ["C9MCalendar8DateView", "dateUpdateDelegate"]
 - ["C9MCalendar8DateView", "deinit"]
 - ["C9MCalendar8DateView", "draw"]
@@ -277,12 +271,12 @@ depends-member:
 - ["C9MCalendar8DateView", "getdateView"]
 - !private ["C9MCalendar8DateView", "highlightDate"]
 - ["C9MCalendar8DateView", "init"]
-- ["C9MCalendar8DateView", "isBeginningOfMonth"]
-- ["C9MCalendar8DateView", "isDateHighlighted"]
+- !private ["C9MCalendar8DateView", "isBeginningOfMonth"]
+- !private ["C9MCalendar8DateView", "isDateHighlighted"]
 - !private ["C9MCalendar8DateView", "isToday"]
 - !private ["C9MCalendar8DateView", "layoutSubviews"]
-- ["C9MCalendar8DateView", "myNotification"]
-- ["C9MCalendar8DateView", "textOnView"]
+- !private ["C9MCalendar8DateView", "myNotification"]
+- !private ["C9MCalendar8DateView", "textOnView"]
 - ["C9MCalendar8DateView", "touchesBegan"]
 - !private ["C9MCalendar8DateView", "unHighlightDate"]
 - ["C9MCalendar8DateView", "unHighlightWhenNotificationRecieved"]
@@ -1088,4 +1082,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
-interface-hash: "4ddb791ff2e5a064db4e66e23a32b044"
+interface-hash: "bf4a29bbea86cd2ad492d2314c9deb4b"

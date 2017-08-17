@@ -9,8 +9,6 @@ provides-dynamic-lookup:
 - "addEvent"
 - "btn_clicked"
 - "dismissViewController"
-- "eventDate"
-- "navigationBar"
 - "viewDidLoad"
 depends-top-level:
 - !private "*"
@@ -25,10 +23,10 @@ depends-top-level:
 - !private "Calendar"
 - !private "CoreDataUtilities"
 - "Date"
-- "EventContents"
+- !private "EventContents"
 - "NSCoder"
 - !private "String"
-- "StringLiteralType"
+- !private "StringLiteralType"
 - !private "UIAlertAction"
 - !private "UIAlertController"
 - "UIBarButtonItem"
@@ -50,7 +48,7 @@ depends-member:
 - !private ["C9MCalendar11AddNewEvent", "Calendar"]
 - !private ["C9MCalendar11AddNewEvent", "CoreDataUtilities"]
 - ["C9MCalendar11AddNewEvent", "Date"]
-- ["C9MCalendar11AddNewEvent", "EventContents"]
+- !private ["C9MCalendar11AddNewEvent", "EventContents"]
 - ["C9MCalendar11AddNewEvent", "NSCoder"]
 - !private ["C9MCalendar11AddNewEvent", "String"]
 - !private ["C9MCalendar11AddNewEvent", "UIAlertAction"]
@@ -69,14 +67,13 @@ depends-member:
 - ["C9MCalendar11AddNewEvent", "deinit"]
 - !private ["C9MCalendar11AddNewEvent", "dismiss"]
 - ["C9MCalendar11AddNewEvent", "dismissViewController"]
-- ["C9MCalendar11AddNewEvent", "eventDate"]
+- !private ["C9MCalendar11AddNewEvent", "eventDate"]
 - !private ["C9MCalendar11AddNewEvent", "eventDescriptionTextView"]
 - !private ["C9MCalendar11AddNewEvent", "eventNameTextView"]
 - !private ["C9MCalendar11AddNewEvent", "eventTimeTextView"]
 - !private ["C9MCalendar11AddNewEvent", "fatalError"]
 - ["C9MCalendar11AddNewEvent", "init"]
-- ["C9MCalendar11AddNewEvent", "navigationBar"]
-- ["C9MCalendar11AddNewEvent", "newEventObject"]
+- !private ["C9MCalendar11AddNewEvent", "navigationBar"]
 - !private ["C9MCalendar11AddNewEvent", "placeTextView"]
 - !private ["C9MCalendar11AddNewEvent", "present"]
 - !private ["C9MCalendar11AddNewEvent", "setupFieldsforAddingevent"]
@@ -87,7 +84,7 @@ depends-member:
 - !private ["Ps9AnyObject", "Calendar"]
 - !private ["Ps9AnyObject", "CoreDataUtilities"]
 - ["Ps9AnyObject", "Date"]
-- ["Ps9AnyObject", "EventContents"]
+- !private ["Ps9AnyObject", "EventContents"]
 - !private ["Ps9AnyObject", "String"]
 - !private ["Ps9AnyObject", "UIAlertAction"]
 - !private ["Ps9AnyObject", "UIAlertController"]
@@ -160,7 +157,7 @@ depends-member:
 - !private ["Ps7CVarArg", "Calendar"]
 - !private ["Ps7CVarArg", "CoreDataUtilities"]
 - ["Ps7CVarArg", "Date"]
-- ["Ps7CVarArg", "EventContents"]
+- !private ["Ps7CVarArg", "EventContents"]
 - !private ["Ps7CVarArg", "String"]
 - !private ["Ps7CVarArg", "UIAlertAction"]
 - !private ["Ps7CVarArg", "UIAlertController"]
@@ -217,7 +214,7 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "Calendar"]
 - !private ["Ps28CustomDebugStringConvertible", "CoreDataUtilities"]
 - ["Ps28CustomDebugStringConvertible", "Date"]
-- ["Ps28CustomDebugStringConvertible", "EventContents"]
+- !private ["Ps28CustomDebugStringConvertible", "EventContents"]
 - !private ["Ps28CustomDebugStringConvertible", "String"]
 - !private ["Ps28CustomDebugStringConvertible", "UIAlertAction"]
 - !private ["Ps28CustomDebugStringConvertible", "UIAlertController"]
@@ -293,7 +290,7 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "Calendar"]
 - !private ["Ps23CustomStringConvertible", "CoreDataUtilities"]
 - ["Ps23CustomStringConvertible", "Date"]
-- ["Ps23CustomStringConvertible", "EventContents"]
+- !private ["Ps23CustomStringConvertible", "EventContents"]
 - !private ["Ps23CustomStringConvertible", "String"]
 - !private ["Ps23CustomStringConvertible", "UIAlertAction"]
 - !private ["Ps23CustomStringConvertible", "UIAlertController"]
@@ -351,7 +348,7 @@ depends-member:
 - !private ["Ps9Equatable", "Calendar"]
 - !private ["Ps9Equatable", "CoreDataUtilities"]
 - ["Ps9Equatable", "Date"]
-- ["Ps9Equatable", "EventContents"]
+- !private ["Ps9Equatable", "EventContents"]
 - !private ["Ps9Equatable", "String"]
 - !private ["Ps9Equatable", "UIAlertAction"]
 - !private ["Ps9Equatable", "UIAlertController"]
@@ -411,16 +408,16 @@ depends-member:
 - !private ["Ps9Equatable", "width"]
 - !private ["Ps9Equatable", "y"]
 - ["Ps9Equatable", ""]
-- ["V9MCalendar13EventContents", "init"]
-- ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "init"]
-- ["Ps26ExpressibleByStringLiteral", "init"]
-- ["Ps33ExpressibleByUnicodeScalarLiteral", "init"]
+- !private ["V9MCalendar13EventContents", "init"]
+- !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "init"]
+- !private ["Ps26ExpressibleByStringLiteral", "init"]
+- !private ["Ps33ExpressibleByUnicodeScalarLiteral", "init"]
 - !private ["Ps8Hashable", "AddNewEvent"]
 - !private ["Ps8Hashable", "CGRect"]
 - !private ["Ps8Hashable", "Calendar"]
 - !private ["Ps8Hashable", "CoreDataUtilities"]
 - ["Ps8Hashable", "Date"]
-- ["Ps8Hashable", "EventContents"]
+- !private ["Ps8Hashable", "EventContents"]
 - !private ["Ps8Hashable", "String"]
 - !private ["Ps8Hashable", "UIAlertAction"]
 - !private ["Ps8Hashable", "UIAlertController"]
@@ -475,14 +472,14 @@ depends-member:
 - !private ["Ps8Hashable", "viewDidLoad"]
 - !private ["Ps8Hashable", "white"]
 - ["Ps8Hashable", ""]
-- ["Ps25LosslessStringConvertible", "init"]
-- ["Ps10MirrorPath", "init"]
+- !private ["Ps25LosslessStringConvertible", "init"]
+- !private ["Ps10MirrorPath", "init"]
 - !private ["PSo8NSCoding", "AddNewEvent"]
 - !private ["PSo8NSCoding", "CGRect"]
 - !private ["PSo8NSCoding", "Calendar"]
 - !private ["PSo8NSCoding", "CoreDataUtilities"]
 - ["PSo8NSCoding", "Date"]
-- ["PSo8NSCoding", "EventContents"]
+- !private ["PSo8NSCoding", "EventContents"]
 - !private ["PSo8NSCoding", "String"]
 - !private ["PSo8NSCoding", "UIAlertAction"]
 - !private ["PSo8NSCoding", "UIAlertController"]
@@ -528,14 +525,14 @@ depends-member:
 - !private ["PSo8NSCoding", "viewDidLoad"]
 - !private ["PSo8NSCoding", "white"]
 - ["PSo8NSCoding", ""]
-- ["PSo9NSCopying", "init"]
+- !private ["PSo9NSCopying", "init"]
 - !private ["PSo9NSCopying", "white"]
 - !private ["PSo26NSExtensionRequestHandling", "AddNewEvent"]
 - !private ["PSo26NSExtensionRequestHandling", "CGRect"]
 - !private ["PSo26NSExtensionRequestHandling", "Calendar"]
 - !private ["PSo26NSExtensionRequestHandling", "CoreDataUtilities"]
 - ["PSo26NSExtensionRequestHandling", "Date"]
-- ["PSo26NSExtensionRequestHandling", "EventContents"]
+- !private ["PSo26NSExtensionRequestHandling", "EventContents"]
 - !private ["PSo26NSExtensionRequestHandling", "String"]
 - !private ["PSo26NSExtensionRequestHandling", "UIAlertAction"]
 - !private ["PSo26NSExtensionRequestHandling", "UIAlertController"]
@@ -566,14 +563,14 @@ depends-member:
 - !private ["PSo26NSExtensionRequestHandling", "view"]
 - !private ["PSo26NSExtensionRequestHandling", "viewDidLoad"]
 - ["PSo26NSExtensionRequestHandling", ""]
-- ["PSo16NSMutableCopying", "init"]
+- !private ["PSo16NSMutableCopying", "init"]
 - !private ["CSo8NSObject", "AddNewEvent"]
 - ["CSo8NSObject", "Bool"]
 - ["CSo8NSObject", "CGRect"]
 - !private ["CSo8NSObject", "Calendar"]
 - !private ["CSo8NSObject", "CoreDataUtilities"]
 - ["CSo8NSObject", "Date"]
-- ["CSo8NSObject", "EventContents"]
+- !private ["CSo8NSObject", "EventContents"]
 - ["CSo8NSObject", "NSCoder"]
 - !private ["CSo8NSObject", "String"]
 - !private ["CSo8NSObject", "UIAlertAction"]
@@ -609,7 +606,6 @@ depends-member:
 - !private ["CSo8NSObject", "items"]
 - !private ["CSo8NSObject", "leftBarButtonItem"]
 - ["CSo8NSObject", "navigationBar"]
-- ["CSo8NSObject", "newEventObject"]
 - ["CSo8NSObject", "placeTextView"]
 - !private ["CSo8NSObject", "placeholder"]
 - !private ["CSo8NSObject", "present"]
@@ -625,7 +621,7 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "Calendar"]
 - !private ["PSo16NSObjectProtocol", "CoreDataUtilities"]
 - ["PSo16NSObjectProtocol", "Date"]
-- ["PSo16NSObjectProtocol", "EventContents"]
+- !private ["PSo16NSObjectProtocol", "EventContents"]
 - !private ["PSo16NSObjectProtocol", "String"]
 - !private ["PSo16NSObjectProtocol", "UIAlertAction"]
 - !private ["PSo16NSObjectProtocol", "UIAlertController"]
@@ -671,9 +667,9 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "viewDidLoad"]
 - !private ["PSo16NSObjectProtocol", "white"]
 - ["PSo16NSObjectProtocol", ""]
-- ["PSo14NSSecureCoding", "init"]
+- !private ["PSo14NSSecureCoding", "init"]
 - !private ["PSo14NSSecureCoding", "white"]
-- ["CSo8NSString", "init"]
+- !private ["CSo8NSString", "init"]
 - !private ["Ps16RawRepresentable", "actionSheet"]
 - !private ["Ps16RawRepresentable", "default"]
 - !private ["Ps16RawRepresentable", "plain"]
@@ -685,9 +681,9 @@ depends-member:
 - ["P10Foundation20ReferenceConvertible", "init"]
 - !private ["P10Foundation20ReferenceConvertible", "minute"]
 - !private ["Vs12StaticString", "init"]
-- ["SS", "init"]
-- ["Ps16TextOutputStream", "init"]
-- ["Ps20TextOutputStreamable", "init"]
+- !private ["SS", "init"]
+- !private ["Ps16TextOutputStream", "init"]
+- !private ["Ps20TextOutputStreamable", "init"]
 - !private ["PSo29UIAccessibilityIdentification", "addSubview"]
 - !private ["PSo29UIAccessibilityIdentification", "animate"]
 - !private ["PSo29UIAccessibilityIdentification", "backgroundColor"]
@@ -722,7 +718,7 @@ depends-member:
 - !private ["PSo21UIAppearanceContainer", "Calendar"]
 - !private ["PSo21UIAppearanceContainer", "CoreDataUtilities"]
 - ["PSo21UIAppearanceContainer", "Date"]
-- ["PSo21UIAppearanceContainer", "EventContents"]
+- !private ["PSo21UIAppearanceContainer", "EventContents"]
 - !private ["PSo21UIAppearanceContainer", "String"]
 - !private ["PSo21UIAppearanceContainer", "UIAlertAction"]
 - !private ["PSo21UIAppearanceContainer", "UIAlertController"]
@@ -777,7 +773,7 @@ depends-member:
 - !private ["PSo18UIContentContainer", "Calendar"]
 - !private ["PSo18UIContentContainer", "CoreDataUtilities"]
 - ["PSo18UIContentContainer", "Date"]
-- ["PSo18UIContentContainer", "EventContents"]
+- !private ["PSo18UIContentContainer", "EventContents"]
 - !private ["PSo18UIContentContainer", "String"]
 - !private ["PSo18UIContentContainer", "UIAlertAction"]
 - !private ["PSo18UIContentContainer", "UIAlertController"]
@@ -855,7 +851,7 @@ depends-member:
 - !private ["PSo18UIFocusEnvironment", "Calendar"]
 - !private ["PSo18UIFocusEnvironment", "CoreDataUtilities"]
 - ["PSo18UIFocusEnvironment", "Date"]
-- ["PSo18UIFocusEnvironment", "EventContents"]
+- !private ["PSo18UIFocusEnvironment", "EventContents"]
 - !private ["PSo18UIFocusEnvironment", "String"]
 - !private ["PSo18UIFocusEnvironment", "UIAlertAction"]
 - !private ["PSo18UIFocusEnvironment", "UIAlertController"]
@@ -933,7 +929,7 @@ depends-member:
 - !private ["CSo11UIResponder", "Calendar"]
 - !private ["CSo11UIResponder", "CoreDataUtilities"]
 - ["CSo11UIResponder", "Date"]
-- ["CSo11UIResponder", "EventContents"]
+- !private ["CSo11UIResponder", "EventContents"]
 - ["CSo11UIResponder", "NSCoder"]
 - !private ["CSo11UIResponder", "String"]
 - !private ["CSo11UIResponder", "UIAlertAction"]
@@ -968,7 +964,6 @@ depends-member:
 - ["CSo11UIResponder", "init"]
 - !private ["CSo11UIResponder", "items"]
 - ["CSo11UIResponder", "navigationBar"]
-- ["CSo11UIResponder", "newEventObject"]
 - ["CSo11UIResponder", "placeTextView"]
 - !private ["CSo11UIResponder", "placeholder"]
 - !private ["CSo11UIResponder", "present"]
@@ -981,7 +976,7 @@ depends-member:
 - !private ["PSo30UIResponderStandardEditActions", "Calendar"]
 - !private ["PSo30UIResponderStandardEditActions", "CoreDataUtilities"]
 - ["PSo30UIResponderStandardEditActions", "Date"]
-- ["PSo30UIResponderStandardEditActions", "EventContents"]
+- !private ["PSo30UIResponderStandardEditActions", "EventContents"]
 - !private ["PSo30UIResponderStandardEditActions", "String"]
 - !private ["PSo30UIResponderStandardEditActions", "UIAlertAction"]
 - !private ["PSo30UIResponderStandardEditActions", "UIAlertController"]
@@ -1028,7 +1023,7 @@ depends-member:
 - !private ["PSo16UIStateRestoring", "Calendar"]
 - !private ["PSo16UIStateRestoring", "CoreDataUtilities"]
 - ["PSo16UIStateRestoring", "Date"]
-- ["PSo16UIStateRestoring", "EventContents"]
+- !private ["PSo16UIStateRestoring", "EventContents"]
 - !private ["PSo16UIStateRestoring", "String"]
 - !private ["PSo16UIStateRestoring", "UIAlertAction"]
 - !private ["PSo16UIStateRestoring", "UIAlertController"]
@@ -1083,7 +1078,7 @@ depends-member:
 - !private ["PSo18UITraitEnvironment", "Calendar"]
 - !private ["PSo18UITraitEnvironment", "CoreDataUtilities"]
 - ["PSo18UITraitEnvironment", "Date"]
-- ["PSo18UITraitEnvironment", "EventContents"]
+- !private ["PSo18UITraitEnvironment", "EventContents"]
 - !private ["PSo18UITraitEnvironment", "String"]
 - !private ["PSo18UITraitEnvironment", "UIAlertAction"]
 - !private ["PSo18UITraitEnvironment", "UIAlertController"]
@@ -1144,7 +1139,7 @@ depends-member:
 - !private ["CSo16UIViewController", "Calendar"]
 - !private ["CSo16UIViewController", "CoreDataUtilities"]
 - ["CSo16UIViewController", "Date"]
-- ["CSo16UIViewController", "EventContents"]
+- !private ["CSo16UIViewController", "EventContents"]
 - ["CSo16UIViewController", "NSCoder"]
 - !private ["CSo16UIViewController", "String"]
 - !private ["CSo16UIViewController", "UIAlertAction"]
@@ -1170,7 +1165,6 @@ depends-member:
 - !private ["CSo16UIViewController", "fatalError"]
 - ["CSo16UIViewController", "init"]
 - ["CSo16UIViewController", "navigationBar"]
-- ["CSo16UIViewController", "newEventObject"]
 - ["CSo16UIViewController", "placeTextView"]
 - !private ["CSo16UIViewController", "present"]
 - ["CSo16UIViewController", "setupFieldsforAddingevent"]
@@ -1189,19 +1183,19 @@ depends-member:
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "items"]
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "placeholder"]
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "text"]
-- ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "init"]
-- ["Ps34_ExpressibleByBuiltinStringLiteral", "init"]
-- ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "init"]
-- ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "init"]
+- !private ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "init"]
+- !private ["Ps34_ExpressibleByBuiltinStringLiteral", "init"]
+- !private ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "init"]
+- !private ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "init"]
 - !private ["Ps26_ExpressibleByColorLiteral", "white"]
-- ["Ps33_ExpressibleByStringInterpolation", "init"]
-- ["Ps35_HasCustomAnyHashableRepresentation", "init"]
+- !private ["Ps33_ExpressibleByStringInterpolation", "init"]
+- !private ["Ps35_HasCustomAnyHashableRepresentation", "init"]
 - !private ["Ps9_Hashable", "AddNewEvent"]
 - !private ["Ps9_Hashable", "CGRect"]
 - !private ["Ps9_Hashable", "Calendar"]
 - !private ["Ps9_Hashable", "CoreDataUtilities"]
 - ["Ps9_Hashable", "Date"]
-- ["Ps9_Hashable", "EventContents"]
+- !private ["Ps9_Hashable", "EventContents"]
 - !private ["Ps9_Hashable", "String"]
 - !private ["Ps9_Hashable", "UIAlertAction"]
 - !private ["Ps9_Hashable", "UIAlertController"]
@@ -1289,27 +1283,27 @@ depends-nominal:
 - "V10Foundation4Date"
 - !private "V10Foundation14DateComponents"
 - "Ps9Equatable"
-- "V9MCalendar13EventContents"
-- "Ps43ExpressibleByExtendedGraphemeClusterLiteral"
-- "Ps26ExpressibleByStringLiteral"
-- "Ps33ExpressibleByUnicodeScalarLiteral"
+- !private "V9MCalendar13EventContents"
+- !private "Ps43ExpressibleByExtendedGraphemeClusterLiteral"
+- !private "Ps26ExpressibleByStringLiteral"
+- !private "Ps33ExpressibleByUnicodeScalarLiteral"
 - "Ps8Hashable"
-- "Ps25LosslessStringConvertible"
-- "Ps10MirrorPath"
+- !private "Ps25LosslessStringConvertible"
+- !private "Ps10MirrorPath"
 - "PSo8NSCoding"
-- "PSo9NSCopying"
+- !private "PSo9NSCopying"
 - "PSo26NSExtensionRequestHandling"
-- "PSo16NSMutableCopying"
+- !private "PSo16NSMutableCopying"
 - "CSo8NSObject"
 - "PSo16NSObjectProtocol"
-- "PSo14NSSecureCoding"
-- "CSo8NSString"
+- !private "PSo14NSSecureCoding"
+- !private "CSo8NSString"
 - !private "Ps16RawRepresentable"
 - "P10Foundation20ReferenceConvertible"
 - !private "Vs12StaticString"
-- "SS"
-- "Ps16TextOutputStream"
-- "Ps20TextOutputStreamable"
+- !private "SS"
+- !private "Ps16TextOutputStream"
+- !private "Ps20TextOutputStreamable"
 - "PSo29UIAccessibilityIdentification"
 - !private "CSo13UIAlertAction"
 - !private "OSC18UIAlertActionStyle"
@@ -1347,13 +1341,13 @@ depends-nominal:
 - "CSo6UIView"
 - "CSo16UIViewController"
 - "Ps37_DefaultCustomPlaygroundQuickLookable"
-- "Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral"
-- "Ps34_ExpressibleByBuiltinStringLiteral"
-- "Ps39_ExpressibleByBuiltinUTF16StringLiteral"
-- "Ps41_ExpressibleByBuiltinUnicodeScalarLiteral"
+- !private "Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral"
+- !private "Ps34_ExpressibleByBuiltinStringLiteral"
+- !private "Ps39_ExpressibleByBuiltinUTF16StringLiteral"
+- !private "Ps41_ExpressibleByBuiltinUnicodeScalarLiteral"
 - !private "Ps26_ExpressibleByColorLiteral"
-- "Ps33_ExpressibleByStringInterpolation"
-- "Ps35_HasCustomAnyHashableRepresentation"
+- !private "Ps33_ExpressibleByStringInterpolation"
+- !private "Ps35_HasCustomAnyHashableRepresentation"
 - "Ps9_Hashable"
 - !private "P10Foundation14_MutableBoxing"
 - "Ps21_ObjectiveCBridgeable"
@@ -1379,4 +1373,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
-interface-hash: "5e9fe792d65874db487de57c02212547"
+interface-hash: "ee838df9739e0cb79c032e1f3e1994e6"

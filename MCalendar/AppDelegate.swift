@@ -26,11 +26,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       // and offer to take the user to Settings for the app via
       // UIApplication -openUrl: and UIApplicationOpenSettingsURLString
       DispatchQueue.main.async(execute: {
-        let alert = UIAlertController(title: "Error!", message: "GPS access is restricted. In order to use tracking, please enable GPS in the Settigs app under Privacy, Location Services.", preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: "Error!", message: "GPS access is restricted. In order to use tracking, please enable GPS in the Settings under Privacy -> Location Services.", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Go to Settings", style: UIAlertActionStyle.default, handler: { (alert: UIAlertAction!) in
-          print("")
           UIApplication.shared.open(URL.init(string: UIApplicationOpenSettingsURLString)!, options:[:], completionHandler: nil)
         }))
+        alert.addAction(UIAlertAction(title: "Not Now", style: UIAlertActionStyle.cancel, handler:nil))
         // self.presentViewController(alert, animated: true, completion: nil)
         self.window?.rootViewController?.present(alert, animated: true, completion: nil)
       })

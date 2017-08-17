@@ -10,6 +10,7 @@ import Foundation
 
 public class DateData {
   
+  //This method will return the array of dates for the specified month
   public static func getdays(forMonth month:Int, year:Int) -> [[String]]{
     let calendar = Calendar.current
     // Calculate start and end of the current year (or month with `.month`):
@@ -48,7 +49,7 @@ public class DateData {
     }
     return monthDates
   }
-  
+  //This method calculates and returns the start date for the month by setting hour and min components to 0.
   public static func getStartDateForMonth(forMonth month:Int, foryear year:Int) -> Date {
     if month > 0 && month <= 12 {
       var dateComponents = DateComponents()
@@ -67,6 +68,7 @@ public class DateData {
     
   }
   
+  //This method returns the string equivalent of the month.
   public static func getMonth(month:Int) -> String {
     switch month {
     case 1:
@@ -96,6 +98,7 @@ public class DateData {
     }
   }
   
+  //This method returns the string equivalent of the weekday.
   public static func getDayName(day:Int) -> String {
     switch day {
     case 1:
@@ -114,7 +117,7 @@ public class DateData {
       return "Saturday"
     }
   }
-  
+  // This method checks n returns true if the input date is today, if not false.
   public static func isToday(date:Date) -> Bool {
     let currentdate:Date = Date()
     if Calendar.current.compare(date, to: currentdate, toGranularity: .day) == .orderedSame {

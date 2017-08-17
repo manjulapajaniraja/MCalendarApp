@@ -6,9 +6,6 @@ provides-nominal:
 provides-member:
 - ["C9MCalendar9MonthView", ""]
 provides-dynamic-lookup:
-- "arrayOfWeeks"
-- "currentMonth"
-- "currentYear"
 - "numberOfSections"
 - "scrollViewDidEndDragging"
 - "tableView"
@@ -464,9 +461,9 @@ depends-member:
 - ["C9MCalendar9MonthView", "UIScrollView"]
 - ["C9MCalendar9MonthView", "UITableView"]
 - ["C9MCalendar9MonthView", "UITableViewCell"]
-- ["C9MCalendar9MonthView", "arrayOfWeeks"]
-- ["C9MCalendar9MonthView", "currentMonth"]
-- ["C9MCalendar9MonthView", "currentYear"]
+- !private ["C9MCalendar9MonthView", "arrayOfWeeks"]
+- !private ["C9MCalendar9MonthView", "currentMonth"]
+- !private ["C9MCalendar9MonthView", "currentYear"]
 - ["C9MCalendar9MonthView", "deinit"]
 - !private ["C9MCalendar9MonthView", "fatalError"]
 - ["C9MCalendar9MonthView", "init"]
@@ -1407,4 +1404,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
-interface-hash: "2b5bf936ce2b8329aed573780ce88cec"
+interface-hash: "d5219c933f6a2b41c9cc39696de40969"

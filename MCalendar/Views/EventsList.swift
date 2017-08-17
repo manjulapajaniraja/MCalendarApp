@@ -10,8 +10,8 @@ import UIKit
 
 class EventsView: UITableView, UITableViewDelegate, UITableViewDataSource {
   
-  var eventsOnCurrentDate:[EventContents]?
-  var currentDate = Date()
+  private var eventsOnCurrentDate:[EventContents]?
+  private var currentDate = Date()
   
   init(frame: CGRect, style: UITableViewStyle, events:[EventContents], forDate:Date) {
     super.init(frame: frame, style: style)

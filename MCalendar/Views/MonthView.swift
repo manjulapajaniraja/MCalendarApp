@@ -10,10 +10,10 @@ import UIKit
 
 class MonthView: UITableViewController {
   
-  var arrayOfWeeks = [[DateView]]()
-  var currentMonth : Int = 1
-  var currentYear : Int = 2017
-  var monthupdateDelegate:DateUpdateType?
+  private var arrayOfWeeks = [[DateView]]()
+  private var currentMonth : Int = 1
+  private var currentYear : Int = 2017
+  weak var monthupdateDelegate:DateUpdateType?
   
   init(withframe frame: CGRect, currentMonth:Int, currentYear:Int) {
      super.init(nibName: nil, bundle: nil)
@@ -56,7 +56,21 @@ class MonthView: UITableViewController {
     return tableView.frame.size.height/5
   }
   // UITableView Delegate methods
-  
+  override func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    let currentOffset = scrollView.contentOffset.y
+    let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
+    let deltaOffset = maximumOffset - currentOffset
+    if deltaOffset < 0  && deltaOffset > -tableView.frame.height/2 {
+      // load next month data
+      loadAdjacentMonthDates(adjacentComponent: 1)
+      
+    }
+    if deltaOffset > 0 && deltaOffset > tableView.frame.height/2 {
+      //load prev month data
+      loadAdjacentMonthDates(adjacentComponent: -1)
+      
+    }
+  }
   
   //Objects initialization for displaying dates are done here
   private func initializeDateViewArrayFor(month:Int, year:Int) {
@@ -83,22 +97,7 @@ class MonthView: UITableViewController {
     }
   }
   
-  override func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-    let currentOffset = scrollView.contentOffset.y
-    let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
-    let deltaOffset = maximumOffset - currentOffset
-    if deltaOffset < 0  && deltaOffset > -tableView.frame.height/2 {
-      // load next month data
-      loadAdjacentMonthDates(adjacentComponent: 1)
-      
-    }
-    if deltaOffset > 0 && deltaOffset > tableView.frame.height/2 {
-      //load prev month data
-      loadAdjacentMonthDates(adjacentComponent: -1)
-
-    }
-  }
-  
+  //Loads the adjacent month data when the view is scrolled
   private func loadAdjacentMonthDates(adjacentComponent:Int) {
     var currentmonthstart = DateData.getStartDateForMonth(forMonth:currentMonth,foryear:currentYear)
     var components = DateComponents()
